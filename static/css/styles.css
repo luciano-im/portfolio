@@ -1,0 +1,93 @@
+:root {
+  --hover-color: #C45C7C;
+}
+
+/* UTILS */
+
+.vertical-divisor {
+  margin: 0 10px;
+}
+
+.round-black-button {
+  border-radius: 999em;
+  background-color: black;
+  color: white;
+  padding: .8rem 1.8rem;
+}
+
+/* BODY STYLES */
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+  padding: 20px;
+}
+
+/* NAV STYLES */
+
+#main-nav {
+  display: grid;
+  grid-template-rows: 30px 30px;
+}
+
+#main-nav .nav-top {
+  border-bottom: 1px solid black;
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+#main-nav .nav-top span {
+  font-weight: bold;
+}
+
+#main-nav ul {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+}
+
+#main-nav ul li {
+  list-style: none;
+}
+
+#main-nav ul li:not(:last-child) {
+  margin-right: 20px;
+}
+
+#main-nav a {
+  color: black;
+  text-decoration: none;
+}
+
+#main-nav a:hover {
+  color: var(--hover-color);
+}
+
+#main-nav .nav-bottom {
+  align-items: flex-end;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* INTRO STYLES */
+
+#intro {
+  display: grid;
+  grid-template-columns: 250px auto;
+  padding: 50px 0;
+}
+
+#intro .photo img {
+  border-radius: 50%;
+  width: 200px;
+  height: auto;
+}
+
+#intro .description .hello {
+  font-size: 2rem;
+  margin: 0 0 1rem 0;
+}
