@@ -211,6 +211,44 @@ h3 {
   justify-content: flex-end;
 }
 
+#main-nav .theme-selector div {
+  align-items: center;
+  border-radius: 50px;
+  box-sizing: border-box;
+  display: flex;
+  cursor: pointer;
+  height: 22px;
+  padding: 4px;
+  transition: all 1s ease;
+  width: 40px;
+}
+
+#main-nav .theme-selector .light {
+  background-color: var(--light-background-color);
+}
+
+#main-nav .theme-selector .dark {
+  background-color: var(--dark-background-color);
+}
+
+#main-nav .theme-selector .icon {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  transition: all 1s ease;
+  transform-origin: 50% 50% 0px;
+}
+
+#main-nav .theme-selector .light .icon {
+  box-shadow: var(--dark-background-color) 16px -1px inset;
+  transform: none;
+}
+
+#main-nav .theme-selector .dark .icon {
+  box-shadow: var(--light-background-color) 6px -1px inset, var(--light-background-color) 3px 0px 0px 0px inset;
+  transform: translateX(16px) rotate(360deg);
+}
+
 /* INTRO STYLES */
 
 #intro {
