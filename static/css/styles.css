@@ -3,11 +3,15 @@
   --dark-background-color: #232121;
   --darkgrey-background-color: #434040;
   --grey-background-color: #CDCBCB;
-  --light-background-color: #F5F3EF;
+  /* --light-background-color: #F5F3EF; */
+  --light-background-color: #FFF;
   --alt-background-color: #EDEBE7;
   --dark-text-color: #333333;
   --dark-text-color-rgba: 51, 51, 51;
   --light-text-color: #F5F3EF;
+  --light-text-color-rgba: 245, 243, 239;
+  --underline-text-color: var(--dark-text-color-rgba);
+  --xs-gap: 15px;
   --sm-gap: 30px;
   --md-gap: 50px;
   --lg-gap: 80px;
@@ -90,28 +94,40 @@ h3 {
   font-size: 1.5rem;
 }
 
+.hover-translation {
+  transition: transform 200ms ease-in-out;
+}
+
+.hover-translation:hover {
+  transform: translateY(-3px);
+}
+
+.link-with-underline {
+  text-decoration: underline rgba(var(--underline-text-color), 0);
+  transition: text-decoration-color 300ms ease-in-out;
+}
+
+.link-with-underline:hover {
+  text-decoration-color: rgba(var(--underline-text-color), 1);
+}
+
 .round-button {
   align-items: center;
   border-radius: 999em;
   box-sizing: border-box;
   display: inline-flex;
-  transition: transform 100ms ease-in-out 100ms;
-}
-
-.round-button:hover {
-  transform: translateY(-3px);
 }
 
 .black-button-lg {
   background-color: var(--dark-background-color);
   border: 1px solid var(--dark-background-color);
   color: white;
-  padding: .7rem 1.8rem;
+  padding: .5rem 1.4rem;
 }
 
 .outline-button-lg {
   border: 1px solid var(--dark-background-color);
-  padding: .7rem 1.8rem;
+  padding: .5rem 1.4rem;
 }
 
 .outline-button-md {
@@ -220,7 +236,7 @@ h3 {
 }
 
 #intro .buttons-list a {
-  margin-right: var(--sm-gap);
+  margin-right: var(--xs-gap);
 }
 
 /* PROJECT STYLES */
@@ -229,9 +245,15 @@ h3 {
 #projects .projects-list .project {
   border-radius: var(--project-border-radius);
   display: grid;
+  filter: saturate(0);
   grid-template-columns: 1fr 1fr;
   margin-bottom: var(--md-gap);
   min-height: 350px;
+  transition: filter 300ms ease-in-out;
+}
+
+#projects .projects-list .project:hover {
+  filter: saturate(1);
 }
 
 #projects .projects-list .project .cover {
@@ -247,8 +269,17 @@ h3 {
   color: var(--light-text-color);
 }
 
+#projects .projects-list .project:nth-child(odd) a {
+  --underline-text-color: var(--light-text-color-rgba);
+  color: var(--light-text-color);
+}
+
 #projects .projects-list .project:nth-child(even) {
   background-color: var(--alt-background-color);
+  color: var(--dark-text-color);
+}
+
+#projects .projects-list .project:nth-child(even) a {
   color: var(--dark-text-color);
 }
 
@@ -332,6 +363,7 @@ h3 {
 }
 
 #blog .post .date {
+  color: grey;
   font-size: .9rem;
   margin-top: 0;
   display: flex;
@@ -359,16 +391,6 @@ h3 {
   width: 100px;
 }
 
-#blog .thoughts ul li .title {
-  margin-left: 10px;
-  text-decoration: underline rgba(var(--dark-text-color-rgba), 0);
-  transition: text-decoration-color 300ms ease-in-out;
-}
-
-#blog .thoughts ul li .title:hover {
-  text-decoration-color: rgba(var(--dark-text-color-rgba), 1);
-}
-
 /* FOOTER STYLES */
 
 footer {
@@ -385,6 +407,7 @@ footer .container {
 }
 
 footer p {
+  font-size: .9rem;
   margin: 0;
 }
 
