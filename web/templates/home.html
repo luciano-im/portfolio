@@ -28,7 +28,7 @@
         </div>
       </div>
       <div class="nav-bottom">
-        <a href="">EN</a><span class="vertical-divisor">|</span><a href="">ES</a>
+        <a href="">EN</a><span class="vertical-divisor"></span><a href="">ES</a>
       </div>
     </nav>
     <main>
@@ -47,12 +47,12 @@
         </div>
       </section>
       <section id="projects">
-        <div class="projects-title">
-          <div>
+        <div class="section-title">
+          <div class="titles">
             <h2>Projects</h2>
             <h3>Let's have a look at my portfolio</h3>
           </div>
-          <div>
+          <div class="actions">
             <a href="" class="round-button outline-button-md">See All</a>
           </div>
         </div>
@@ -156,25 +156,54 @@
         </div>
       </section>
       <section id="blog">
-        <div class="latest-posts">
-          <article class="post">
-            <h3>My post</h3>
-            <p class="date"></p>
-            <p class="resume">Extract of the blog post with. A resume of the content.</p>
-          </article>
+        <div class="section-title">
+          <div class="titles">
+            <h2>Blog</h2>
+            <h3>Chekout what I have to say</h3>
+          </div>
         </div>
-        <div class="thoughts">
-          <article class="post">
-            <h3>My thought</h3>
-            <p class="date"></p>
-            <p class="resume">Extract of the blog post with. A resume of the content.</p>
-          </article>
+        <div class="writings">
+          <div class="posts">
+            <article class="post">
+              <h3><a href="" class="post-title">Web Scraping with Python</a></h3>
+              <p class="date"><img src="{% static "img/calendar.svg" %}" alt="">Posted on Jun 14, 2022<span class="dot-divisor"></span><img src="{% static "img/clock.svg" %}" alt="">10 min read</p>
+              <div class="resume">
+                <p>Scraping is a technique for extracting data from a website when there’s no other source to obtain that data, like a Rest API or RSS feed.</p>
+                <p>I want to show you in this post how we can develop our own bot. You could use the same approach to track the price of that product you want, or get the latest news from the news website you like.</p>
+              </div>
+            </article>
+            <article class="post">
+              <h3><a href="" class="post-title">Comparti tu Localhost de forma segura con Ngrok y Localtunnel</a></h3>
+              <p class="date"><img src="{% static "img/calendar.svg" %}" alt="">Posted on May 10, 2022<span class="dot-divisor"></span><img src="{% static "img/clock.svg" %}" alt="">4 min read</p>
+              <div class="resume">
+                <p>ngrok y Localtunnel son dos aplicaciones que nos permiten exponer en internet una conexión HTTPS hacia nuestro localhost, de manera que podemos compartir, por ejemplo, nuestro servidor web local; incluso aunque nos encontremos detrás de un firewall.</p>
+              </div>
+            </article>
+            <article class="post">
+              <h3> <a href="" class="post-title">My Learning Journey</a></h3>
+              <p class="date"><img src="{% static "img/calendar.svg" %}" alt="">Posted on Apr 20, 2022<span class="dot-divisor"></span><img src="{% static "img/clock.svg" %}" alt="">5 min read</p>
+              <div class="resume">
+                <p>Hi there!, my name is Luciano Muñoz and I'm a developer. First of all I want to thank you for taking a few minutes to read me ❤️.</p>
+                <p>My intention with this blog is to document the learning process in my journey as a developer.</p>
+              </div>
+            </article>
+          </div>
+          <div class="thoughts">
+            <h3>My Thoughts</h3>
+            <ul>
+              <li><span class="date">2024-04-20</span><a href="" class="post-title">About the bussines</a></li>
+              <li><span class="date">2023-05-12</span><a href="" class="post-titleitle">How the world must be</a></li>
+              <li><span class="date">2022-09-03</span><a href="" class="post-title">Is this for me?</a></li>
+            </ul>
+          </div>
         </div>
       </section>
     </main>
     <footer>
-      <p>© 2024 Luciano Muñoz</p>
-      <p>Built with Django, HTML and vanilla CSS.</p>
+      <div class="container">
+        <p>© 2024 Luciano Muñoz</p>
+        <p>Built with Django, HTML and vanilla CSS.</p>
+      </div>
     </footer>
   </body>
 </html>
