@@ -174,3 +174,7 @@ MARTOR_ENABLE_ADMIN_CSS = False
 MARTOR_UPLOAD_PATH = 'images/uploads/{}'.format(time.strftime("%Y/%m/%d/"))
 MARTOR_UPLOAD_URL = '/api/uploader/'  # change to local uploader
 MAX_IMAGE_UPLOAD_SIZE = 5242880  # 5MB
+
+
+# Taggit settings
+TAGGIT_CASE_INSENSITIVE = True
