@@ -1,5 +1,6 @@
 from django.db import models
 from martor.models import MartorField
+from taggit.managers import TaggableManager
 
 
 class Post(models.Model):
@@ -23,6 +24,7 @@ class Post(models.Model):
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='draft', verbose_name='Estado')
     featured_image = models.ImageField(upload_to='posts/', null=True, blank=True, verbose_name='Imágen Destacada')
     post_type = models.CharField(max_length=10, choices=POST_TYPE_CHOICES, default='blog', verbose_name='Tipo de Post')
+    tags = TaggableManager()
 
     def __str__(self):
         return self.title

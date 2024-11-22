@@ -12,7 +12,7 @@ class PostAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
     fieldsets = (
         (None, {
-            'fields': ('title', 'slug', 'post_type', 'status', 'published_at',),
+            'fields': (('title', 'slug'), 'post_type', 'status', 'published_at', 'tags',),
         }),
         (_('Contenido'), {
             'fields': ('content',),
