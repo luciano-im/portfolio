@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'taggit',
     'taggit_labels',
     'martor',
+    'tinymce',
     'web',
 ]
 

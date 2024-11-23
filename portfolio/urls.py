@@ -8,5 +8,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('martor/', include('martor.urls')),
     path('api/uploader/', markdown_uploader, name='markdown_uploader_page'),
+    path('tinymce/', include('tinymce.urls')),
     path('', HomeView.as_view(), name='home'),
 ]
