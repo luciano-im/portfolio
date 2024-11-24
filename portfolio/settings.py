@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'taggit',
     'taggit_labels',
+    'easy_thumbnails',
+    'filer',
     'martor',
     'tinymce',
     'web',
@@ -181,3 +183,11 @@ MAX_IMAGE_UPLOAD_SIZE = 5242880  # 5MB
 
 # Taggit settings
 TAGGIT_CASE_INSENSITIVE = True
+
+
+# Filer settings
+FILER_CANONICAL_URL = 'sharing/'
+FILER_MIME_TYPE_WHITELIST = [
+    "image/*",  # All types of "image"
+]
+FILER_UPLOADER_MAX_FILE_SIZE = 5  # In megabytes
