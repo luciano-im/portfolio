@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.utils.translation import gettext as _
 
 from web.forms import PostForm
-from web.models import Post
+from web.models import Post, Project, ProjectImage
 
 
 class PostAdmin(admin.ModelAdmin):
@@ -23,4 +23,30 @@ class PostAdmin(admin.ModelAdmin):
     )
 
 
+class ProjectImageInline(admin.StackedInline):
+    model = ProjectImage
+    extra = 1
+
+
+class ProjectAdmin(admin.ModelAdmin):
+    list_display = ('name', 'year', 'overview', 'active')
+    list_filter = ('active', 'name', 'year')
+    inlines = [ProjectImageInline]
+    fieldsets = (
+        (None, {
+            'fields': ('name', 'active', 'year',),
+        }),
+        (_('URLs'), {
+            'fields': ('repo', 'url',),
+        }),
+        (_('Resumen'), {
+            'fields': ('overview',),
+        }),
+        (_('Contenido'), {
+            'fields': ('intro', 'goals', 'challenges', 'solutions', 'impact', 'conclusion',),
+        }),
+    )
+
+
 admin.site.register(Post, PostAdmin)
+admin.site.register(Project, ProjectAdmin)

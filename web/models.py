@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from filer.fields.image import FilerImageField
 from martor.models import MartorField
 from taggit.managers import TaggableManager
 from tinymce.models import HTMLField
@@ -33,6 +34,8 @@ class Post(models.Model):
 
     class Meta:
         ordering = ['-created_at']
+        verbose_name = _('Posts')
+        verbose_name_plural = _('Post')
 
 
 class Project(models.Model):
@@ -51,3 +54,19 @@ class Project(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name = _('Proyecto')
+        verbose_name_plural = _('Proyectos')
+
+
+class ProjectImage(models.Model):
+    product = models.ForeignKey(Project, on_delete=models.CASCADE, verbose_name=_('Proyecto'))
+    image = FilerImageField(on_delete=models.CASCADE, verbose_name=_('Imágen'))
+
+    def __str__(self):
+        return self.image.filename
+
+    class Meta:
+        verbose_name = _('Imágen del Proyecto')
+        verbose_name_plural = _('Imágenes del Proyecto')
