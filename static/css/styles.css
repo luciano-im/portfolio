@@ -1,25 +1,40 @@
 :root {
+  /* Fonts */
   --font-montserrat: "Montserrat", sans-serif;
   --font-geist: "Geist Mono", monospace;
   --base-font: var(--font-geist);
-  --hover-color: #C45C7C;
-  --dark-background-color: #232121;
-  --darkgrey-background-color: #434040;
-  --grey-background-color: #CDCBCB;
-  /* --light-background-color: #F5F3EF; */
-  --light-background-color: #FFF;
-  --alt-background-color: #EDEBE7;
-  --dark-text-color: #333333;
-  --dark-text-color-rgba: 51, 51, 51;
-  --light-text-color: #F5F3EF;
-  --light-text-color-rgba: 245, 243, 239;
-  --underline-text-color: var(--dark-text-color-rgba);
+  /* Colors */
+  --color-hover: #C45C7C;
+  --color-dark: #232121;
+  --color-darkgrey: #434040;
+  --color-grey: #CDCBCB;
+  /* #F5F3EF; */
+  --color-light: #FFF;
+  --color-lightgrey: #EDEBE7;
+  --text-color-dark: #333333;
+  --text-color-dark-rgba: 51, 51, 51;
+  --text-color-light: #F5F3EF;
+  --text-color-light-rgba: 245, 243, 239;
+  /* Dark Light Theme Properties */
+  --main-background-color: var(--color-light);
+  --accent-background-color: var(--color-dark);
+  --alt-background-color: var(--color-lightgrey);
+  --border-color: var(--color-dark);
+  --tech-badge-odd: var(--color-darkgrey);
+  --tech-badge-even: var(--color-grey);
+  --main-text-color: var(--text-color-dark);
+  --main-text-color-rgba: var(--text-color-dark-rgba);
+  --accent-text-color: var(--text-color-light);
+  --accent-text-color-rgba: var(--text-color-light-rgba);
+  --underline-text-color: var(--text-color-dark-rgba);
+  /* Sizes */
   --xs-gap: 15px;
   --sm-gap: 30px;
   --md-gap: 50px;
   --lg-gap: 80px;
   --section-padding: 50px 0;
   --project-border-radius: 25px;
+  /* Media Queries */
   --size-xs: 0;
   /* No media query for `xs` since this is the default */
   --size-sm: 576px;
@@ -37,8 +52,8 @@
 /* BASE STYLES */
 
 body {
-  background-color: var(--light-background-color);
-  color: var(--dark-text-color);
+  background-color: var(--main-background-color);
+  color: var(--main-text-color);
   font-family: var(--base-font);
   font-optical-sizing: auto;
   font-weight: 400;
@@ -58,7 +73,7 @@ body main {
 
 a {
   text-decoration: none;
-  color: var(--dark-text-color);
+  color: var(--main-text-color);
   transition: color 350ms ease-out;
 }
 
@@ -122,19 +137,21 @@ h3 {
 }
 
 .black-button-lg {
-  background-color: var(--dark-background-color);
-  border: 1px solid var(--dark-background-color);
-  color: white;
+  background-color: var(--accent-background-color);
+  border: 1px solid var(--border-color);
+  color: var(--accent-text-color);
   padding: .5rem 1.4rem;
 }
 
 .outline-button-lg {
-  border: 1px solid var(--dark-background-color);
+  border: 1px solid var(--border-color);
+  color: var(--main-text-color);
   padding: .5rem 1.4rem;
 }
 
 .outline-button-md {
-  border: 1px solid var(--dark-background-color);
+  border: 1px solid var(--border-color);
+  color: var(--main-text-color);
   padding: .3rem 1rem;
 }
 
@@ -180,7 +197,7 @@ h3 {
 }
 
 #main-nav .nav-top {
-  border-bottom: 1px solid var(--dark-background-color);
+  border-bottom: 1px solid var(--border-color);
   display: grid;
   grid-template-columns: 1fr auto;
 }
@@ -205,7 +222,7 @@ h3 {
 }
 
 #main-nav a:hover {
-  color: var(--hover-color);
+  color: var(--color-hover);
 }
 
 #main-nav .nav-bottom {
@@ -227,11 +244,11 @@ h3 {
 }
 
 #main-nav .theme-selector .light {
-  background-color: var(--light-background-color);
+  background-color: var(--main-background-color);
 }
 
 #main-nav .theme-selector .dark {
-  background-color: var(--dark-background-color);
+  background-color: var(--accent-background-color);
 }
 
 #main-nav .theme-selector .icon {
@@ -243,12 +260,12 @@ h3 {
 }
 
 #main-nav .theme-selector .light .icon {
-  box-shadow: var(--dark-background-color) 16px -1px inset;
+  box-shadow: var(--accent-background-color) 16px -1px inset;
   transform: none;
 }
 
 #main-nav .theme-selector .dark .icon {
-  box-shadow: var(--light-background-color) 6px -1px inset, var(--light-background-color) 3px 0px 0px 0px inset;
+  box-shadow: var(--main-background-color) 6px -1px inset, var(--main-background-color) 3px 0px 0px 0px inset;
   transform: translateX(16px) rotate(360deg);
 }
 
@@ -306,22 +323,22 @@ h3 {
 }
 
 #projects .projects-list .project:nth-child(odd) {
-  background-color: var(--dark-background-color);
-  color: var(--light-text-color);
+  background-color: var(--accent-background-color);
+  color: var(--accent-text-color);
 }
 
 #projects .projects-list .project:nth-child(odd) a {
-  --underline-text-color: var(--light-text-color-rgba);
-  color: var(--light-text-color);
+  --underline-text-color: var(--accent-text-color-rgba);
+  color: var(--accent-text-color);
 }
 
 #projects .projects-list .project:nth-child(even) {
   background-color: var(--alt-background-color);
-  color: var(--dark-text-color);
+  color: var(--main-text-color);
 }
 
 #projects .projects-list .project:nth-child(even) a {
-  color: var(--dark-text-color);
+  color: var(--main-text-color);
 }
 
 #projects .projects-list .project:nth-child(even) .project-details {
@@ -353,11 +370,11 @@ h3 {
 }
 
 #projects .projects-list .project:nth-child(odd) .tech li {
-  background-color: var(--darkgrey-background-color);
+  background-color: var(--tech-badge-odd);
 }
 
 #projects .projects-list .project:nth-child(even) .tech li {
-  background-color: var(--grey-background-color);
+  background-color: var(--tech-badge-even);
 }
 
 #projects .projects-list .project .description {
@@ -378,7 +395,7 @@ h3 {
 }
 
 #projects .projects-list .project:nth-child(odd) .project-actions a {
-  color: var(--light-text-color);
+  color: var(--accent-text-color);
 }
 
 #projects .projects-list .project .project-actions a svg {
@@ -435,8 +452,8 @@ h3 {
 /* FOOTER STYLES */
 
 footer {
-  background-color: var(--dark-background-color);
-  color: var(--light-text-color);
+  background-color: var(--accent-background-color);
+  color: var(--accent-text-color);
 }
 
 footer .container {
@@ -454,4 +471,27 @@ footer p {
 
 footer .container p:nth-child(2) {
   text-align: right;
+}
+
+/* MEDIA QUERIES */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark Light Theme Properties */
+    --main-background-color: var(--color-dark);
+    --accent-background-color: var(--color-light);
+    --alt-background-color: var(--color-darkgrey);
+    --border-color: var(--color-light);
+    --tech-badge-odd: var(--color-lightgrey);
+    --tech-badge-even: var(--color-dark);
+    --main-text-color: var(--text-color-light);
+    --main-text-color-rgba: var(--text-color-light-rgba);
+    --accent-text-color: var(--text-color-dark);
+    --accent-text-color-rgba: var(--text-color-dark-rgba);
+    --underline-text-color: var(--text-color-light-rgba);
+  }
+
+  #blog .post .date svg {
+    color: var(--main-text-color);
+  }
 }
