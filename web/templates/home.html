@@ -5,6 +5,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark light">
     <link rel="stylesheet" href="{% static "css/styles.css" %}">
     <title>Luciano Muñoz - Full Stack Web Developer  |  Python and Javascript</title>
 
@@ -12,6 +13,61 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet">
+
+    <script>
+      // Check if a theme is stored in local storage and apply it
+      // This code runs outside the "load" event to avoid flickering on reload
+      let storedTheme = localStorage.getItem("theme");
+      if (storedTheme == "dark") {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else if (storedTheme == "light") {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+
+      window.addEventListener('load', () => {
+        const themeSelector = document.querySelector(".theme-selector");
+        const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+        // If there is not stored theme in local storage 
+        // check prefers-color-scheme querie to see wich theme to apply
+        if (!storedTheme) {
+          if(prefersDarkScheme.matches) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+          } else {
+            document.documentElement.setAttribute('data-theme', 'light');
+          }
+        }
+
+        // Detect if system theme has changed and update the theme without reloading the page
+        prefersDarkScheme.addEventListener("change", function(e) {
+          // Get the theme each time to avoid issue with change event when user selected a theme for the first time
+          storedTheme = localStorage.getItem("theme");
+          if (!storedTheme) {
+            if(e.matches) {
+              document.documentElement.setAttribute('data-theme', 'dark');
+            } else {
+              document.documentElement.setAttribute('data-theme', 'light');
+            }
+          }
+        });
+
+        // Add event listener to theme selector to switch theme
+        themeSelector.addEventListener("click", function () {
+          const currentTheme = document.documentElement.getAttribute('data-theme');
+          if(currentTheme == 'light') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            var theme = "dark";
+          }
+          
+          if(currentTheme == 'dark') {
+            document.documentElement.setAttribute('data-theme', 'light');
+            var theme = "light";
+          }
+
+          localStorage.setItem("theme", theme);
+        });
+      });
+    </script>
   </head>
   <body>
     <nav id="main-nav">
@@ -26,7 +82,7 @@
             <li><a href="">Blog</a></li>
             <li><a href="">Thoughts</a></li>
             <li class="theme-selector">
-              <div class="dark">
+              <div class="container">
                 <span class="icon"></span>
               </div>
             </li>
