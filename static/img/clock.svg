@@ -1,4 +1,6 @@
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M12 8V12.6154L15 14" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M9.54869 4.37882C11.0708 3.52265 12.9292 3.52265 14.4513 4.37882L17.4513 6.06632C19.0257 6.95191 20 8.61783 20 10.4242V13.5757C20 15.3821 19.0257 17.048 17.4513 17.9336L14.4513 19.6211C12.9292 20.4773 11.0708 20.4773 9.54869 19.6211L6.54869 17.9336C4.97431 17.048 4 15.3821 4 13.5757V10.4242C4 8.61783 4.97431 6.95191 6.54869 6.06632L9.54869 4.37882Z" stroke="#292D32" stroke-width="1.5"/>
+<svg width="0" height="0" class="hidden">
+  <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="clock">
+    <path d="M12 8V12.6154L15 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+    <path d="M9.54869 4.37882C11.0708 3.52265 12.9292 3.52265 14.4513 4.37882L17.4513 6.06632C19.0257 6.95191 20 8.61783 20 10.4242V13.5757C20 15.3821 19.0257 17.048 17.4513 17.9336L14.4513 19.6211C12.9292 20.4773 11.0708 20.4773 9.54869 19.6211L6.54869 17.9336C4.97431 17.048 4 15.3821 4 13.5757V10.4242C4 8.61783 4.97431 6.95191 6.54869 6.06632L9.54869 4.37882Z" stroke="currentColor" stroke-width="1.5"></path>
+  </symbol>
 </svg>

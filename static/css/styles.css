@@ -428,7 +428,7 @@ h3 {
   align-items: center;
 }
 
-#blog .post .date img {
+#blog .post .date svg {
   margin-right: 5px;
   height: auto;
   width: 16px;
