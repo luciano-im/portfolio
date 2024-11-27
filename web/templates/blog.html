@@ -1,0 +1,35 @@
+{% extends "home.html" %}
+{% load static %}
+
+{% block title %}Blog  |  Luciano Muñoz - Full Stack Web Developer  |  Python and Javascript{% endblock title %}
+
+{% block content %}
+  <section id="blog">
+    <div class="section-title">
+      <div class="titles">
+        <h2>Blog</h2>
+        <h3>Chekout what I have to say</h3>
+      </div>
+      <div class="actions">
+        <a href="" class="round-button outline-button-md hover-translation">See my thought too!</a>
+      </div>
+    </div>
+    <div class="writings">
+      <div class="posts">
+        {% for post in object_list %}
+          <article class="post">
+            <h3><a href="" class="post-title link-with-underline">{{post.title}}</a></h3>
+            <p class="date">
+              <svg class="icon" height="24" width="24"><use xlink:href="{% static "img/calendar.svg" %}#calendar"></use></svg> Posted on {{post.published_at|date:"M d, Y"}}
+              <span class="dot-divisor"></span>
+              <svg class="icon" height="24" width="24"><use xlink:href="{% static "img/clock.svg" %}#clock"></use></svg> 10 min read
+            </p>
+            <div class="resume">
+              {{post.excerpt}}
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endblock content %}

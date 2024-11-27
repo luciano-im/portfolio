@@ -7,7 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="dark light">
     <link rel="stylesheet" href="{% static "css/styles.css" %}">
-    <title>Luciano Muñoz - Full Stack Web Developer  |  Python and Javascript</title>
+    <title>
+      {% block title %}
+        Luciano Muñoz - Full Stack Web Developer  |  Python and Javascript
+      {% endblock title %}
+    </title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -79,7 +83,7 @@
           <ul>
             <li><a href="">About</a></li>
             <li><a href="">Projects</a></li>
-            <li><a href="">Blog</a></li>
+            <li><a href="{% url 'blog' %}">Blog</a></li>
             <li><a href="">Thoughts</a></li>
             <li class="theme-selector">
               <div class="container">
@@ -94,206 +98,208 @@
       </div>
     </nav>
     <main>
-      <section id="intro">
-        <div class="photo">
-          <img src="{% static "img/me.png" %}" alt="">
-        </div>
-        <div class="description">
-          <h1 class="hello">Hi there, I'm Luciano 👋</h1>
-          <p>A Full Stack Web Developer from Argentina with 6+ years working as a freelance.</p>
-          <p>Currently working with Python 🐍 and Javascript 💛.</p>
-          <div class="buttons-list">
-            <a href="" class="round-button black-button-lg hover-translation">
-              <svg class="icon" height="24" width="24">
-                <use xlink:href="{% static "img/github.svg" %}#github"></use>
-              </svg>
-            </a>
-            <a href="" class="round-button black-button-lg hover-translation">
-              <svg class="icon" height="19" width="19">
-                <use xlink:href="{% static "img/linkedin.svg" %}#linkedin"></use>
-              </svg>
-            </a>
-            <a href="" class="round-button black-button-lg button-with-icon hover-translation">
-              hola@luciano.im
-              <svg class="icon" width="24" height="24">
-                <use xlink:href="{% static "img/email.svg" %}#email"></use>
-              </svg>
-            </a>
-            <a href="" class="round-button outline-button-lg button-with-icon hover-translation">
-              Download CV
-              <svg class="icon" width="24" height="24">
-                <use xlink:href="{% static "img/download.svg" %}#download"></use>
-              </svg>
-            </a>
+      {% block content %}
+        <section id="intro">
+          <div class="photo">
+            <img src="{% static "img/me.png" %}" alt="">
           </div>
-        </div>
-      </section>
-      <section id="projects">
-        <div class="section-title">
-          <div class="titles">
-            <h2>Projects</h2>
-            <h3>Let's have a look at my portfolio</h3>
+          <div class="description">
+            <h1 class="hello">Hi there, I'm Luciano 👋</h1>
+            <p>A Full Stack Web Developer from Argentina with 6+ years working as a freelance.</p>
+            <p>Currently working with Python 🐍 and Javascript 💛.</p>
+            <div class="buttons-list">
+              <a href="" class="round-button black-button-lg hover-translation">
+                <svg class="icon" height="24" width="24">
+                  <use xlink:href="{% static "img/github.svg" %}#github"></use>
+                </svg>
+              </a>
+              <a href="" class="round-button black-button-lg hover-translation">
+                <svg class="icon" height="19" width="19">
+                  <use xlink:href="{% static "img/linkedin.svg" %}#linkedin"></use>
+                </svg>
+              </a>
+              <a href="" class="round-button black-button-lg button-with-icon hover-translation">
+                hola@luciano.im
+                <svg class="icon" width="24" height="24">
+                  <use xlink:href="{% static "img/email.svg" %}#email"></use>
+                </svg>
+              </a>
+              <a href="" class="round-button outline-button-lg button-with-icon hover-translation">
+                Download CV
+                <svg class="icon" width="24" height="24">
+                  <use xlink:href="{% static "img/download.svg" %}#download"></use>
+                </svg>
+              </a>
+            </div>
           </div>
-          <div class="actions">
-            <a href="" class="round-button outline-button-md hover-translation">See All</a>
+        </section>
+        <section id="projects">
+          <div class="section-title">
+            <div class="titles">
+              <h2>Projects</h2>
+              <h3>Let's have a look at my portfolio</h3>
+            </div>
+            <div class="actions">
+              <a href="" class="round-button outline-button-md hover-translation">See All</a>
+            </div>
           </div>
-        </div>
-        <div class="projects-list">
-          <div class="project">
-            <img src="{% static "img/projects/2.jpg" %}" alt="" class="cover">
-            <div class="project-details">
-              <h2 class="project-title"><a href="" class="link-with-underline">F. Sellart</a></h2>
-              <div class="tech">
-                <ul>
-                  <li>Python</li>
-                  <li>Django</li>
-                  <li>JavaScript</li>
-                  <li>CSS</li>
-                </ul>
+          <div class="projects-list">
+            <div class="project">
+              <img src="{% static "img/projects/2.jpg" %}" alt="" class="cover">
+              <div class="project-details">
+                <h2 class="project-title"><a href="" class="link-with-underline">F. Sellart</a></h2>
+                <div class="tech">
+                  <ul>
+                    <li>Python</li>
+                    <li>Django</li>
+                    <li>JavaScript</li>
+                    <li>CSS</li>
+                  </ul>
+                </div>
+                <div class="description">
+                  <p>Fugiat irure nulla culpa anim elit esse consequat officia est. Laborum ullamco velit incididunt culpa elit incididunt reprehenderit. Dolore fugiat enim laboris est eiusmod id. Pariatur irure adipisicing voluptate aute nostrud aliqua eiusmod culpa occaecat quis officia. Exercitation quis id laborum sint consequat incididunt ut sit est anim. Veniam laborum minim reprehenderit Lorem cillum deserunt.</p>
+                </div>
+                <div class="project-actions">
+                  <a href="" class="hover-translation">
+                    Github
+                    <svg class="icon" height="24" width="24">
+                      <use xlink:href="{% static "img/github.svg" %}#github"></use>
+                    </svg>
+                  </a>
+                  <a href="" class="hover-translation">
+                    View
+                    <svg class="icon" height="24" width="24">
+                      <use xlink:href="{% static "img/external-link.svg" %}#external-link"></use>
+                    </svg>
+                  </a>
+                </div>
               </div>
-              <div class="description">
-                <p>Fugiat irure nulla culpa anim elit esse consequat officia est. Laborum ullamco velit incididunt culpa elit incididunt reprehenderit. Dolore fugiat enim laboris est eiusmod id. Pariatur irure adipisicing voluptate aute nostrud aliqua eiusmod culpa occaecat quis officia. Exercitation quis id laborum sint consequat incididunt ut sit est anim. Veniam laborum minim reprehenderit Lorem cillum deserunt.</p>
+            </div>
+            <div class="project">
+              <img src="{% static "img/projects/1.jpg" %}" alt="" class="cover">
+              <div class="project-details">
+                <h2 class="project-title"><a href="" class="link-with-underline">ArreBeef</a></h2>
+                <div class="tech">
+                  <ul>
+                    <li>Python</li>
+                    <li>Django</li>
+                    <li>JavaScript</li>
+                    <li>CSS</li>
+                  </ul>
+                </div>
+                <div class="description">
+                  <p>Fugiat irure nulla culpa anim elit esse consequat officia est. Laborum ullamco velit incididunt culpa elit incididunt reprehenderit. Dolore fugiat enim laboris est eiusmod id. Pariatur irure adipisicing voluptate aute nostrud aliqua eiusmod culpa occaecat quis officia. Exercitation quis id laborum sint consequat incididunt ut sit est anim. Veniam laborum minim reprehenderit Lorem cillum deserunt.</p>
+                </div>
+                <div class="project-actions">
+                  <a href="" class="hover-translation">
+                    Github
+                    <svg class="icon" height="24" width="24">
+                      <use xlink:href="{% static "img/github.svg" %}#github"></use>
+                    </svg>
+                  </a>
+                  <a href="" class="hover-translation">
+                    View
+                    <svg class="icon" height="24" width="24">
+                      <use xlink:href="{% static "img/external-link.svg" %}#external-link"></use>
+                    </svg>
+                  </a>
+                </div>
               </div>
-              <div class="project-actions">
-                <a href="" class="hover-translation">
-                  Github
-                  <svg class="icon" height="24" width="24">
-                    <use xlink:href="{% static "img/github.svg" %}#github"></use>
-                  </svg>
-                </a>
-                <a href="" class="hover-translation">
-                  View
-                  <svg class="icon" height="24" width="24">
-                    <use xlink:href="{% static "img/external-link.svg" %}#external-link"></use>
-                  </svg>
-                </a>
+            </div>
+            <div class="project">
+              <img src="{% static "img/projects/3.jpg" %}" alt="" class="cover">
+              <div class="project-details">
+                <h2 class="project-title"><a href="" class="link-with-underline">Acoplados El Grillo</a></h2>
+                <div class="tech">
+                  <ul>
+                    <li>Django</li>
+                    <li>Python</li>
+                    <li>JavaScript</li>
+                    <li>CSS</li>
+                  </ul>
+                </div>
+                <div class="description">
+                  <p>Fugiat irure nulla culpa anim elit esse consequat officia est. Laborum ullamco velit incididunt culpa elit incididunt reprehenderit. Dolore fugiat enim laboris est eiusmod id. Pariatur irure adipisicing voluptate aute nostrud aliqua eiusmod culpa occaecat quis officia. Exercitation quis id laborum sint consequat incididunt ut sit est anim. Veniam laborum minim reprehenderit Lorem cillum deserunt.</p>
+                </div>
+                <div class="project-actions">
+                  <a href="" class="hover-translation">
+                    Github
+                    <svg class="icon" height="24" width="24">
+                      <use xlink:href="{% static "img/github.svg" %}#github"></use>
+                    </svg>
+                  </a>
+                  <a href="" class="hover-translation">
+                    View
+                    <svg class="icon" height="24" width="24">
+                      <use xlink:href="{% static "img/external-link.svg" %}#external-link"></use>
+                    </svg>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
-          <div class="project">
-            <img src="{% static "img/projects/1.jpg" %}" alt="" class="cover">
-            <div class="project-details">
-              <h2 class="project-title"><a href="" class="link-with-underline">ArreBeef</a></h2>
-              <div class="tech">
-                <ul>
-                  <li>Python</li>
-                  <li>Django</li>
-                  <li>JavaScript</li>
-                  <li>CSS</li>
-                </ul>
-              </div>
-              <div class="description">
-                <p>Fugiat irure nulla culpa anim elit esse consequat officia est. Laborum ullamco velit incididunt culpa elit incididunt reprehenderit. Dolore fugiat enim laboris est eiusmod id. Pariatur irure adipisicing voluptate aute nostrud aliqua eiusmod culpa occaecat quis officia. Exercitation quis id laborum sint consequat incididunt ut sit est anim. Veniam laborum minim reprehenderit Lorem cillum deserunt.</p>
-              </div>
-              <div class="project-actions">
-                <a href="" class="hover-translation">
-                  Github
-                  <svg class="icon" height="24" width="24">
-                    <use xlink:href="{% static "img/github.svg" %}#github"></use>
-                  </svg>
-                </a>
-                <a href="" class="hover-translation">
-                  View
-                  <svg class="icon" height="24" width="24">
-                    <use xlink:href="{% static "img/external-link.svg" %}#external-link"></use>
-                  </svg>
-                </a>
-              </div>
+        </section>
+        <section id="blog">
+          <div class="section-title">
+            <div class="titles">
+              <h2>Blog</h2>
+              <h3>Chekout what I have to say</h3>
+            </div>
+            <div class="actions">
+              <a href="" class="round-button outline-button-md hover-translation">See All</a>
             </div>
           </div>
-          <div class="project">
-            <img src="{% static "img/projects/3.jpg" %}" alt="" class="cover">
-            <div class="project-details">
-              <h2 class="project-title"><a href="" class="link-with-underline">Acoplados El Grillo</a></h2>
-              <div class="tech">
-                <ul>
-                  <li>Django</li>
-                  <li>Python</li>
-                  <li>JavaScript</li>
-                  <li>CSS</li>
-                </ul>
-              </div>
-              <div class="description">
-                <p>Fugiat irure nulla culpa anim elit esse consequat officia est. Laborum ullamco velit incididunt culpa elit incididunt reprehenderit. Dolore fugiat enim laboris est eiusmod id. Pariatur irure adipisicing voluptate aute nostrud aliqua eiusmod culpa occaecat quis officia. Exercitation quis id laborum sint consequat incididunt ut sit est anim. Veniam laborum minim reprehenderit Lorem cillum deserunt.</p>
-              </div>
-              <div class="project-actions">
-                <a href="" class="hover-translation">
-                  Github
-                  <svg class="icon" height="24" width="24">
-                    <use xlink:href="{% static "img/github.svg" %}#github"></use>
-                  </svg>
-                </a>
-                <a href="" class="hover-translation">
-                  View
-                  <svg class="icon" height="24" width="24">
-                    <use xlink:href="{% static "img/external-link.svg" %}#external-link"></use>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="blog">
-        <div class="section-title">
-          <div class="titles">
-            <h2>Blog</h2>
-            <h3>Chekout what I have to say</h3>
-          </div>
-          <div class="actions">
-            <a href="" class="round-button outline-button-md hover-translation">See All</a>
-          </div>
-        </div>
-        <div class="writings">
-          <div class="posts">
-            <article class="post">
-              <h3><a href="" class="post-title link-with-underline">Web Scraping with Python</a></h3>
-              <p class="date">
-                <svg class="icon" height="24" width="24"><use xlink:href="{% static "img/calendar.svg" %}#calendar"></use></svg> Posted on Jun 14, 2022
-                <span class="dot-divisor"></span>
-                <svg class="icon" height="24" width="24"><use xlink:href="{% static "img/clock.svg" %}#clock"></use></svg> 10 min read
-              </p>
-              <div class="resume">
-                <p>Scraping is a technique for extracting data from a website when there’s no other source to obtain that data, like a Rest API or RSS feed.</p>
-                <p>I want to show you in this post how we can develop our own bot. You could use the same approach to track the price of that product you want, or get the latest news from the news website you like.</p>
-              </div>
-            </article>
-            <article class="post">
-              <h3><a href="" class="post-title link-with-underline">Comparti tu Localhost de forma segura con Ngrok y Localtunnel</a></h3>
-              <p class="date">
-                <svg class="icon" height="24" width="24"><use xlink:href="{% static "img/calendar.svg" %}#calendar"></use></svg> Posted on May 10, 2022
-                <span class="dot-divisor"></span>
-                <svg class="icon" height="24" width="24"><use xlink:href="{% static "img/clock.svg" %}#clock"></use></svg> 4 min read
-              </p>
-              <div class="resume">
-                <p>ngrok y Localtunnel son dos aplicaciones que nos permiten exponer en internet una conexión HTTPS hacia nuestro localhost, de manera que podemos compartir, por ejemplo, nuestro servidor web local; incluso aunque nos encontremos detrás de un firewall.</p>
-              </div>
-            </article>
-            <article class="post">
-              <h3> <a href="" class="post-title link-with-underline">My Learning Journey</a></h3>
-              <p class="date">
+          <div class="writings">
+            <div class="posts">
+              <article class="post">
+                <h3><a href="" class="post-title link-with-underline">Web Scraping with Python</a></h3>
                 <p class="date">
-                  <svg class="icon" height="24" width="24"><use xlink:href="{% static "img/calendar.svg" %}#calendar"></use></svg> Posted on Apr 20, 2022
+                  <svg class="icon" height="24" width="24"><use xlink:href="{% static "img/calendar.svg" %}#calendar"></use></svg> Posted on Jun 14, 2022
                   <span class="dot-divisor"></span>
-                  <svg class="icon" height="24" width="24"><use xlink:href="{% static "img/clock.svg" %}#clock"></use></svg> 5 min read
+                  <svg class="icon" height="24" width="24"><use xlink:href="{% static "img/clock.svg" %}#clock"></use></svg> 10 min read
                 </p>
-              </p>
-              <div class="resume">
-                <p>Hi there!, my name is Luciano Muñoz and I'm a developer. First of all I want to thank you for taking a few minutes to read me ❤️.</p>
-                <p>My intention with this blog is to document the learning process in my journey as a developer.</p>
-              </div>
-            </article>
+                <div class="resume">
+                  <p>Scraping is a technique for extracting data from a website when there’s no other source to obtain that data, like a Rest API or RSS feed.</p>
+                  <p>I want to show you in this post how we can develop our own bot. You could use the same approach to track the price of that product you want, or get the latest news from the news website you like.</p>
+                </div>
+              </article>
+              <article class="post">
+                <h3><a href="" class="post-title link-with-underline">Comparti tu Localhost de forma segura con Ngrok y Localtunnel</a></h3>
+                <p class="date">
+                  <svg class="icon" height="24" width="24"><use xlink:href="{% static "img/calendar.svg" %}#calendar"></use></svg> Posted on May 10, 2022
+                  <span class="dot-divisor"></span>
+                  <svg class="icon" height="24" width="24"><use xlink:href="{% static "img/clock.svg" %}#clock"></use></svg> 4 min read
+                </p>
+                <div class="resume">
+                  <p>ngrok y Localtunnel son dos aplicaciones que nos permiten exponer en internet una conexión HTTPS hacia nuestro localhost, de manera que podemos compartir, por ejemplo, nuestro servidor web local; incluso aunque nos encontremos detrás de un firewall.</p>
+                </div>
+              </article>
+              <article class="post">
+                <h3> <a href="" class="post-title link-with-underline">My Learning Journey</a></h3>
+                <p class="date">
+                  <p class="date">
+                    <svg class="icon" height="24" width="24"><use xlink:href="{% static "img/calendar.svg" %}#calendar"></use></svg> Posted on Apr 20, 2022
+                    <span class="dot-divisor"></span>
+                    <svg class="icon" height="24" width="24"><use xlink:href="{% static "img/clock.svg" %}#clock"></use></svg> 5 min read
+                  </p>
+                </p>
+                <div class="resume">
+                  <p>Hi there!, my name is Luciano Muñoz and I'm a developer. First of all I want to thank you for taking a few minutes to read me ❤️.</p>
+                  <p>My intention with this blog is to document the learning process in my journey as a developer.</p>
+                </div>
+              </article>
+            </div>
+            <div class="thoughts">
+              <h3>My Thoughts</h3>
+              <ul>
+                <li><span class="date">2024-04-20</span><a href="" class="post-title link-with-underline">About the bussines</a></li>
+                <li><span class="date">2023-05-12</span><a href="" class="post-title link-with-underline">How the world must be</a></li>
+                <li><span class="date">2022-09-03</span><a href="" class="post-title link-with-underline">Is this for me?</a></li>
+              </ul>
+            </div>
           </div>
-          <div class="thoughts">
-            <h3>My Thoughts</h3>
-            <ul>
-              <li><span class="date">2024-04-20</span><a href="" class="post-title link-with-underline">About the bussines</a></li>
-              <li><span class="date">2023-05-12</span><a href="" class="post-title link-with-underline">How the world must be</a></li>
-              <li><span class="date">2022-09-03</span><a href="" class="post-title link-with-underline">Is this for me?</a></li>
-            </ul>
-          </div>
-        </div>
-      </section>
+        </section>
+      {% endblock content %}
     </main>
     <footer>
       <div class="container">

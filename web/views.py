@@ -8,14 +8,24 @@ from django.core.files.storage import default_storage
 from django.core.files.base import ContentFile
 from django.http import HttpResponse
 from django.utils.translation import gettext_lazy as _
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView
 from django.shortcuts import render
 
 from martor.utils import LazyEncoder
 
+from web.models import Post
+
 
 class HomeView(TemplateView):
     template_name = 'home.html'
+
+
+class BlogView(ListView):
+    template_name = 'blog.html'
+    model = Post
+
+    def get_queryset(self):
+        return Post.objects.filter(status='published', post_type='blog').order_by('-created_at')
 
 
 @login_required
