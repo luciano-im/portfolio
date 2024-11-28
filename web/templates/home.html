@@ -1,4 +1,5 @@
 {% load static %}
+{% load get_reading_time %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -251,43 +252,19 @@
           </div>
           <div class="writings">
             <div class="posts">
-              <article class="post">
-                <h3><a href="" class="post-title link-with-underline">Web Scraping with Python</a></h3>
-                <p class="date">
-                  <svg class="icon" height="24" width="24"><use xlink:href="{% static "img/calendar.svg" %}#calendar"></use></svg> Posted on Jun 14, 2022
-                  <span class="dot-divisor"></span>
-                  <svg class="icon" height="24" width="24"><use xlink:href="{% static "img/clock.svg" %}#clock"></use></svg> 10 min read
-                </p>
-                <div class="resume">
-                  <p>Scraping is a technique for extracting data from a website when there’s no other source to obtain that data, like a Rest API or RSS feed.</p>
-                  <p>I want to show you in this post how we can develop our own bot. You could use the same approach to track the price of that product you want, or get the latest news from the news website you like.</p>
-                </div>
-              </article>
-              <article class="post">
-                <h3><a href="" class="post-title link-with-underline">Comparti tu Localhost de forma segura con Ngrok y Localtunnel</a></h3>
-                <p class="date">
-                  <svg class="icon" height="24" width="24"><use xlink:href="{% static "img/calendar.svg" %}#calendar"></use></svg> Posted on May 10, 2022
-                  <span class="dot-divisor"></span>
-                  <svg class="icon" height="24" width="24"><use xlink:href="{% static "img/clock.svg" %}#clock"></use></svg> 4 min read
-                </p>
-                <div class="resume">
-                  <p>ngrok y Localtunnel son dos aplicaciones que nos permiten exponer en internet una conexión HTTPS hacia nuestro localhost, de manera que podemos compartir, por ejemplo, nuestro servidor web local; incluso aunque nos encontremos detrás de un firewall.</p>
-                </div>
-              </article>
-              <article class="post">
-                <h3> <a href="" class="post-title link-with-underline">My Learning Journey</a></h3>
-                <p class="date">
+              {% for post in posts %}
+                <article class="post">
+                  <h3><a href="" class="post-title link-with-underline">{{post.title}}</a></h3>
                   <p class="date">
-                    <svg class="icon" height="24" width="24"><use xlink:href="{% static "img/calendar.svg" %}#calendar"></use></svg> Posted on Apr 20, 2022
+                    <svg class="icon" height="24" width="24"><use xlink:href="{% static "img/calendar.svg" %}#calendar"></use></svg> Posted on {{post.published_at|date:"M d, Y"}}
                     <span class="dot-divisor"></span>
-                    <svg class="icon" height="24" width="24"><use xlink:href="{% static "img/clock.svg" %}#clock"></use></svg> 5 min read
+                    <svg class="icon" height="24" width="24"><use xlink:href="{% static "img/clock.svg" %}#clock"></use></svg> {% get_reading_time post.content %}
                   </p>
-                </p>
-                <div class="resume">
-                  <p>Hi there!, my name is Luciano Muñoz and I'm a developer. First of all I want to thank you for taking a few minutes to read me ❤️.</p>
-                  <p>My intention with this blog is to document the learning process in my journey as a developer.</p>
-                </div>
-              </article>
+                  <div class="resume">
+                    {{post.excerpt}}
+                  </div>
+                </article>
+              {% endfor %}
             </div>
             <div class="thoughts">
               <h3>My Thoughts</h3>
