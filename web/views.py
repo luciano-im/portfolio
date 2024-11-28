@@ -22,6 +22,7 @@ class HomeView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['posts'] = Post.objects.filter(status='published', post_type='blog').order_by('-created_at')[:3]
+        context['thoughts'] = Post.objects.filter(status='published', post_type='thought').order_by('-created_at')[:5]
         return context
 
 
@@ -31,6 +32,14 @@ class BlogView(ListView):
 
     def get_queryset(self):
         return Post.objects.filter(status='published', post_type='blog').order_by('-created_at')
+
+
+class ThoughtsView(ListView):
+    template_name = 'thoughts.html'
+    model = Post
+
+    def get_queryset(self):
+        return Post.objects.filter(status='published', post_type='thought').order_by('-created_at')
 
 
 @login_required

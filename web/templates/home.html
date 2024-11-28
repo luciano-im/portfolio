@@ -85,7 +85,7 @@
             <li><a href="">About</a></li>
             <li><a href="">Projects</a></li>
             <li><a href="{% url 'blog' %}">Blog</a></li>
-            <li><a href="">Thoughts</a></li>
+            <li><a href="{% url 'thoughts' %}">Thoughts</a></li>
             <li class="theme-selector">
               <div class="container">
                 <span class="icon"></span>
@@ -269,9 +269,9 @@
             <div class="thoughts">
               <h3>My Thoughts</h3>
               <ul>
-                <li><span class="date">2024-04-20</span><a href="" class="post-title link-with-underline">About the bussines</a></li>
-                <li><span class="date">2023-05-12</span><a href="" class="post-title link-with-underline">How the world must be</a></li>
-                <li><span class="date">2022-09-03</span><a href="" class="post-title link-with-underline">Is this for me?</a></li>
+                {% for thought in thoughts %}
+                  <li><span class="date">{{thought.published_at|date:"Y-m-d"}}</span> <a href="" class="post-title link-with-underline">{{thought.title}}</a></li>
+                {% endfor %}
               </ul>
             </div>
           </div>
