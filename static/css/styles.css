@@ -150,6 +150,15 @@ h3 {
   margin-bottom: 12px;
 }
 
+.codehilite {
+  border-radius: 3px;
+  padding: var(--xs-gap);
+}
+
+.codehilite pre {
+  margin: 0;
+}
+
 
 /* UTILS */
 
