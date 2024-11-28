@@ -31,6 +31,7 @@ platformdirs==4.3.6
 psycopg2==2.9.10
 pycodestyle==2.12.1
 pyflakes==3.2.0
+Pygments==2.18.0
 pyquery==2.0.1
 python-dotenv==1.0.1
 readtime==3.0.0
