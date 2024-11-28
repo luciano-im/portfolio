@@ -272,7 +272,7 @@
               <h3>My Thoughts</h3>
               <ul>
                 {% for thought in thoughts %}
-                  <li><span class="date">{{thought.published_at|date:"Y-m-d"}}</span> <a href="" class="post-title link-with-underline">{{thought.title}}</a></li>
+                  <li><span class="date">{{thought.published_at|date:"Y-m-d"}}</span> <a href="{% url 'thought' thought.slug %}" class="post-title link-with-underline">{{thought.title}}</a></li>
                 {% endfor %}
               </ul>
             </div>

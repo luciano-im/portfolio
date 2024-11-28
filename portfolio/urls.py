@@ -3,7 +3,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
-from web.views import HomeView, BlogView, ThoughtsView, PostView
+from web.views import HomeView, BlogView, ThoughtsView, PostView, ThoughtView
 from web.views import markdown_uploader
 
 urlpatterns = [
@@ -16,6 +16,7 @@ urlpatterns = [
     path('blog', BlogView.as_view(), name='blog'),
     path('blog/<slug:slug>', PostView.as_view(), name='post'),
     path('thoughts', ThoughtsView.as_view(), name='thoughts'),
+    path('thoughts/<slug:slug>', ThoughtView.as_view(), name='thought'),
 ]
 
 if settings.DEBUG:

@@ -48,6 +48,12 @@ class PostView(DetailView):
     queryset = Post.objects.filter(status='published', post_type='blog').prefetch_related('tags')
 
 
+class ThoughtView(DetailView):
+    model = Post
+    template_name = 'post.html'
+    queryset = Post.objects.filter(status='published', post_type='thought').prefetch_related('tags')
+
+
 @login_required
 def markdown_uploader(request):
     """
