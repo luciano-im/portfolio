@@ -20,7 +20,7 @@
       <div class="posts">
         {% for post in object_list %}
           <article class="post">
-            <h3><a href="" class="post-title link-with-underline">{{post.title}}</a></h3>
+            <h3><a href="{% url 'post' post.slug %}" class="post-title link-with-underline">{{post.title}}</a></h3>
             <p class="date">
               <svg class="icon" height="24" width="24"><use xlink:href="{% static "img/calendar.svg" %}#calendar"></use></svg> Posted on {{post.published_at|date:"M d, Y"}}
               <span class="dot-divisor"></span>

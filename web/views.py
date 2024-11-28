@@ -8,7 +8,7 @@ from django.core.files.storage import default_storage
 from django.core.files.base import ContentFile
 from django.http import HttpResponse
 from django.utils.translation import gettext_lazy as _
-from django.views.generic import TemplateView, ListView
+from django.views.generic import TemplateView, ListView, DetailView
 from django.shortcuts import render
 
 from martor.utils import LazyEncoder
@@ -40,6 +40,11 @@ class ThoughtsView(ListView):
 
     def get_queryset(self):
         return Post.objects.filter(status='published', post_type='thought').order_by('-created_at')
+
+
+class PostView(DetailView):
+    model = Post
+    template_name = 'post.html'
 
 
 @login_required
