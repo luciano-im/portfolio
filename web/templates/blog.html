@@ -1,5 +1,6 @@
 {% extends "home.html" %}
 {% load static %}
+{% load get_reading_time %}
 
 {% block title %}Blog  |  Luciano Muñoz - Full Stack Web Developer  |  Python and Javascript{% endblock title %}
 
@@ -22,7 +23,7 @@
             <p class="date">
               <svg class="icon" height="24" width="24"><use xlink:href="{% static "img/calendar.svg" %}#calendar"></use></svg> Posted on {{post.published_at|date:"M d, Y"}}
               <span class="dot-divisor"></span>
-              <svg class="icon" height="24" width="24"><use xlink:href="{% static "img/clock.svg" %}#clock"></use></svg> 10 min read
+              <svg class="icon" height="24" width="24"><use xlink:href="{% static "img/clock.svg" %}#clock"></use></svg> {% get_reading_time post.content %}
             </p>
             <div class="resume">
               {{post.excerpt}}
