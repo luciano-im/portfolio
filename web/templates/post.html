@@ -1,7 +1,7 @@
 {% extends "home.html" %}
 {% load static %}
 {% load get_reading_time %}
-{% load get_html_from_markdown %}
+{% load render_markdown %}
 
 {% block title %}{{object.title}} | Luciano Muñoz - Full Stack Web Developer | Python and Javascript{% endblock title %}
 
@@ -23,8 +23,7 @@
       </p>
       <div class="content">
         <div>
-          {% get_html_from_markdown object.content as content %}
-          {{content|safe}}
+          {{object.content|render_markdown}}
         </div>
       </div>
     </article>

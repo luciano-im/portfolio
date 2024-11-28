@@ -1,6 +1,6 @@
 {% load static %}
 {% load get_reading_time %}
-{% load get_html_from_markdown %}
+{% load render_markdown %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -262,8 +262,7 @@
                     <svg class="icon" height="24" width="24"><use xlink:href="{% static "img/clock.svg" %}#clock"></use></svg> {% get_reading_time post.content %}
                   </p>
                   <div class="resume">
-                    {% get_html_from_markdown post.excerpt as content %}
-                    {{content|safe}}
+                    {{post.excerpt|render_markdown}}
                   </div>
                 </article>
               {% endfor %}
