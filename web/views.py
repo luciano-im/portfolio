@@ -45,6 +45,7 @@ class ThoughtsView(ListView):
 class PostView(DetailView):
     model = Post
     template_name = 'post.html'
+    queryset = Post.objects.filter(status='published', post_type='blog').prefetch_related('tags')
 
 
 @login_required

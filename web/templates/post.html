@@ -3,28 +3,30 @@
 {% load get_reading_time %}
 {% load get_html_from_markdown %}
 
-{% block title %}Blog | Luciano Muñoz - Full Stack Web Developer | Python and Javascript{% endblock title %}
+{% block title %}{{object.title}} | Luciano Muñoz - Full Stack Web Developer | Python and Javascript{% endblock title %}
 
 {% block content %}
   <section id="blog">
-    <div class="section-title">
-      <div class="titles">
-        <h2>Blog</h2>
-        <h3>Chekout what I have to say</h3>
+    <article class="post">
+      <div class="tags">
+        <ul>
+          {% for tag in object.tags.all %}
+            <li class="round-button outline-button-sm"><a href="">{{tag}}</a></li>
+          {% endfor %}
+        </ul>
       </div>
-      <div class="actions">
-        <a href="" class="round-button outline-button-md hover-translation">See my thought too!</a>
+      <h1>{{object.title}}</h1>
+      <p class="date">
+        <svg class="icon" height="24" width="24"><use xlink:href="{% static "img/calendar.svg" %}#calendar"></use></svg> Posted on {{object.published_at|date:"M d, Y"}}
+        <span class="dot-divisor"></span>
+        <svg class="icon" height="24" width="24"><use xlink:href="{% static "img/clock.svg" %}#clock"></use></svg> {% get_reading_time object.content %}
+      </p>
+      <div class="content">
+        <div>
+          {% get_html_from_markdown object.content as content %}
+          {{content|safe}}
+        </div>
       </div>
-    </div>
-    <div class="writings">
-      <div class="posts">
-        {{object.title}}
-        <p class="date">
-          <svg class="icon" height="24" width="24"><use xlink:href="{% static "img/calendar.svg" %}#calendar"></use></svg> Posted on {{object.published_at|date:"M d, Y"}}
-        </p>
-        {% get_html_from_markdown object.content as content %}
-        {{content|safe}}
-      </div>
-    </div>
+    </article>
   </section>
 {% endblock content %}
