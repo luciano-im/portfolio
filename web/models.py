@@ -48,7 +48,7 @@ class Post(models.Model):
     updated_at = models.DateTimeField(auto_now=True, verbose_name='Fecha de Actualización')
     published_at = models.DateTimeField(null=True, blank=True, verbose_name='Fecha de Publicación')
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='draft', verbose_name='Estado')
-    featured_image = models.ImageField(upload_to='posts/', null=True, blank=True, verbose_name='Imágen Destacada')
+    featured_image = FilerImageField(on_delete=models.CASCADE, null=True, blank=True, verbose_name=_('Imágen Destacada'))
     post_type = models.CharField(max_length=10, choices=POST_TYPE_CHOICES, default='blog', verbose_name='Tipo de Post')
     tags = TaggableManager(through=TaggedPost, help_text=_('Selecciona uno o más tags'))
 
