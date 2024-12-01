@@ -75,6 +75,7 @@ class Project(models.Model):
     impact = HTMLField(null=True, blank=True, verbose_name=_('Impactos del Proyecto'))
     conclusion = HTMLField(null=True, blank=True, verbose_name=_('Conclusión'))
     tech = TaggableManager(through=TaggedProject, verbose_name=_('Tecnologías'), help_text=_('Selecciona una o más tecnologías'))
+    featured_image = FilerImageField(on_delete=models.CASCADE, verbose_name=_('Imágen Destacada'))
 
     def __str__(self):
         return self.name
