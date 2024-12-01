@@ -13,7 +13,7 @@ from django.shortcuts import render
 
 from martor.utils import LazyEncoder
 
-from web.models import Post
+from web.models import Post, Project
 
 
 class HomeView(TemplateView):
@@ -52,6 +52,14 @@ class ThoughtView(DetailView):
     model = Post
     template_name = 'post.html'
     queryset = Post.objects.filter(status='published', post_type='thought').prefetch_related('tags')
+
+
+class ProjectsView(ListView):
+    template_name = 'projects.html'
+    model = Project
+
+    def get_queryset(self):
+        return Project.objects.filter(active=True)
 
 
 @login_required
