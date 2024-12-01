@@ -2,8 +2,31 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 from filer.fields.image import FilerImageField
 from martor.models import MartorField
-# from taggit.managers import TaggableManager
+from taggit.managers import TaggableManager
+from taggit.models import TagBase, GenericTaggedItemBase
 from tinymce.models import HTMLField
+
+
+class TagPost(TagBase):
+
+    class Meta:
+        verbose_name = 'Etiqueta de Post'
+        verbose_name_plural = 'Etiquetas de Post'
+
+
+class TagProject(TagBase):
+
+    class Meta:
+        verbose_name = 'Etiqueta de Proyecto'
+        verbose_name_plural = 'Etiquetas de Proyecto'
+
+
+class TaggedPost(GenericTaggedItemBase):
+    tag = models.ForeignKey(TagPost, on_delete=models.CASCADE, related_name="%(app_label)s_%(class)s_items")
+
+
+class TaggedProject(GenericTaggedItemBase):
+    tag = models.ForeignKey(TagProject, on_delete=models.CASCADE, related_name="%(app_label)s_%(class)s_items")
 
 
 class Post(models.Model):
@@ -27,7 +50,7 @@ class Post(models.Model):
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='draft', verbose_name='Estado')
     featured_image = models.ImageField(upload_to='posts/', null=True, blank=True, verbose_name='Imágen Destacada')
     post_type = models.CharField(max_length=10, choices=POST_TYPE_CHOICES, default='blog', verbose_name='Tipo de Post')
-    # tags = TaggableManager(help_text=_('Selecciona uno o más tags'))
+    tags = TaggableManager(through=TaggedPost, help_text=_('Selecciona uno o más tags'))
 
     def __str__(self):
         return self.title
@@ -51,6 +74,7 @@ class Project(models.Model):
     solutions = HTMLField(null=True, blank=True, verbose_name=_('Soluciones Implementadas'))
     impact = HTMLField(null=True, blank=True, verbose_name=_('Impactos del Proyecto'))
     conclusion = HTMLField(null=True, blank=True, verbose_name=_('Conclusión'))
+    tech = TaggableManager(through=TaggedProject, verbose_name=_('Tecnologías'), help_text=_('Selecciona una o más tecnologías'))
 
     def __str__(self):
         return self.name

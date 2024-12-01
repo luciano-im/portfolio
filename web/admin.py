@@ -12,7 +12,7 @@ class PostAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
     fieldsets = (
         (None, {
-            'fields': (('title', 'slug'), 'post_type', 'status', 'published_at',),  # 'tags'
+            'fields': (('title', 'slug'), 'post_type', 'status', 'published_at', 'tags'),
         }),
         (_('Contenido'), {
             'fields': ('content',),
@@ -34,7 +34,7 @@ class ProjectAdmin(admin.ModelAdmin):
     inlines = [ProjectImageInline]
     fieldsets = (
         (None, {
-            'fields': ('name', 'active', 'year',),
+            'fields': ('name', 'active', 'year', 'tech'),
         }),
         (_('URLs'), {
             'fields': ('repo', 'url',),
