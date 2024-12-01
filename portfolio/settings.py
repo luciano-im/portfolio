@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # 'taggit',
-    # 'taggit_labels',
+    'taggit_labels',
     'easy_thumbnails',
     'filer',
     'martor',
