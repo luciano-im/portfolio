@@ -8,7 +8,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('taggit', '0006_rename_taggeditem_content_type_object_id_taggit_tagg_content_8fc721_idx'),
+        # ('taggit', '0006_rename_taggeditem_content_type_object_id_taggit_tagg_content_8fc721_idx'),
         ('web', '0003_post_tags'),
     ]
 
@@ -31,9 +31,9 @@ class Migration(migrations.Migration):
                 ('conclusion', tinymce.models.HTMLField(blank=True, null=True, verbose_name='Conclusión')),
             ],
         ),
-        migrations.AlterField(
-            model_name='post',
-            name='tags',
-            field=taggit.managers.TaggableManager(help_text='Selecciona uno o más tags', through='taggit.TaggedItem', to='taggit.Tag', verbose_name='Tags'),
-        ),
+        # migrations.AlterField(
+        #     model_name='post',
+        #     name='tags',
+        #     field=taggit.managers.TaggableManager(help_text='Selecciona uno o más tags', through='taggit.TaggedItem', to='taggit.Tag', verbose_name='Tags'),
+        # ),
     ]

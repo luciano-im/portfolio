@@ -43,8 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'taggit',
-    'taggit_labels',
+    # 'taggit',
+    # 'taggit_labels',
     'easy_thumbnails',
     'filer',
     'martor',
@@ -182,7 +182,7 @@ MAX_IMAGE_UPLOAD_SIZE = 5242880  # 5MB
 
 
 # Taggit settings
-TAGGIT_CASE_INSENSITIVE = True
+# TAGGIT_CASE_INSENSITIVE = True
 
 
 # Filer settings

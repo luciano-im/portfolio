@@ -2,7 +2,7 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 from filer.fields.image import FilerImageField
 from martor.models import MartorField
-from taggit.managers import TaggableManager
+# from taggit.managers import TaggableManager
 from tinymce.models import HTMLField
 
 
@@ -27,7 +27,7 @@ class Post(models.Model):
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='draft', verbose_name='Estado')
     featured_image = models.ImageField(upload_to='posts/', null=True, blank=True, verbose_name='Imágen Destacada')
     post_type = models.CharField(max_length=10, choices=POST_TYPE_CHOICES, default='blog', verbose_name='Tipo de Post')
-    tags = TaggableManager(help_text=_('Selecciona uno o más tags'))
+    # tags = TaggableManager(help_text=_('Selecciona uno o más tags'))
 
     def __str__(self):
         return self.title
