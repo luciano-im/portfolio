@@ -63,7 +63,7 @@ class Post(models.Model):
 
 class Project(models.Model):
     name = models.CharField(max_length=200, verbose_name=_('Nombre del Proyecto'))
-    slug = models.SlugField(null=True, max_length=200, unique=True)
+    slug = models.SlugField(max_length=200, unique=True)
     active = models.BooleanField(default=True, verbose_name=_('Activo'))
     overview = HTMLField(verbose_name=_('Descripción General'))
     year = models.DateField(blank=True, null=True, verbose_name=_('Año'))
