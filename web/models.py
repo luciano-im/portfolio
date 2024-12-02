@@ -90,7 +90,7 @@ class ProjectImage(models.Model):
     image = FilerImageField(on_delete=models.CASCADE, verbose_name=_('Imágen'))
 
     def __str__(self):
-        return self.image.filename
+        return self.image.name
 
     class Meta:
         verbose_name = _('Imágen del Proyecto')

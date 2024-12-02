@@ -40,7 +40,7 @@ class ProjectAdmin(admin.ModelAdmin):
     inlines = [ProjectImageInline]
     fieldsets = (
         (None, {
-            'fields': ('name', 'active', 'year', 'tech'),
+            'fields': ('name', 'active', 'year', 'tech', 'featured_image'),
         }),
         (_('URLs'), {
             'fields': ('repo', 'url',),
