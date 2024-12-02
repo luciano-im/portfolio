@@ -38,9 +38,10 @@ class ProjectAdmin(admin.ModelAdmin):
     list_display = ('name', 'year', 'overview', 'active')
     list_filter = ('active', 'name', 'year')
     inlines = [ProjectImageInline]
+    prepopulated_fields = {'slug': ('name',)}
     fieldsets = (
         (None, {
-            'fields': ('name', 'active', 'year', 'tech', 'featured_image'),
+            'fields': (('name', 'slug'), 'active', 'year', 'tech', 'featured_image'),
         }),
         (_('URLs'), {
             'fields': ('repo', 'url',),

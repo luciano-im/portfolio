@@ -22,5 +22,6 @@ class ProjectForm(forms.ModelForm):
         model = Project
         fields = '__all__'
         widgets = {
+            'slug': forms.TextInput(attrs={'readonly': True}),
             'tech': LabelWidget(model=TagProject)
         }
