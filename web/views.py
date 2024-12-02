@@ -21,6 +21,7 @@ class HomeView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        context['projects'] = Project.objects.filter(active=True).prefetch_related('tech')
         context['posts'] = Post.objects.filter(status='published', post_type='blog').order_by('-created_at')[:3]
         context['thoughts'] = Post.objects.filter(status='published', post_type='thought').order_by('-created_at')[:5]
         return context
@@ -59,7 +60,7 @@ class ProjectsView(ListView):
     model = Project
 
     def get_queryset(self):
-        return Project.objects.filter(active=True)
+        return Project.objects.filter(active=True).prefetch_related('tech')
 
 
 @login_required

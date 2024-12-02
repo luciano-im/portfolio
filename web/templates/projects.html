@@ -14,99 +14,38 @@
       </div>
     </div>
     <div class="projects-list">
-      <div class="project">
-        <img src="{% static "img/projects/2.jpg" %}" alt="" class="cover">
-        <div class="project-details">
-          <h2 class="project-title"><a href="" class="link-with-underline">F. Sellart</a></h2>
-          <div class="tech">
-            <ul>
-              <li>Python</li>
-              <li>Django</li>
-              <li>JavaScript</li>
-              <li>CSS</li>
-            </ul>
-          </div>
-          <div class="description">
-            <p>Fugiat irure nulla culpa anim elit esse consequat officia est. Laborum ullamco velit incididunt culpa elit incididunt reprehenderit. Dolore fugiat enim laboris est eiusmod id. Pariatur irure adipisicing voluptate aute nostrud aliqua eiusmod culpa occaecat quis officia. Exercitation quis id laborum sint consequat incididunt ut sit est anim. Veniam laborum minim reprehenderit Lorem cillum deserunt.</p>
-          </div>
-          <div class="project-actions">
-            <a href="" class="hover-translation">
-              Github
-              <svg class="icon" height="24" width="24">
-                <use xlink:href="{% static "img/github.svg" %}#github"></use>
-              </svg>
-            </a>
-            <a href="" class="hover-translation">
-              View
-              <svg class="icon" height="24" width="24">
-                <use xlink:href="{% static "img/external-link.svg" %}#external-link"></use>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="project">
-        <img src="{% static "img/projects/1.jpg" %}" alt="" class="cover">
-        <div class="project-details">
-          <h2 class="project-title"><a href="" class="link-with-underline">ArreBeef</a></h2>
-          <div class="tech">
-            <ul>
-              <li>Python</li>
-              <li>Django</li>
-              <li>JavaScript</li>
-              <li>CSS</li>
-            </ul>
-          </div>
-          <div class="description">
-            <p>Fugiat irure nulla culpa anim elit esse consequat officia est. Laborum ullamco velit incididunt culpa elit incididunt reprehenderit. Dolore fugiat enim laboris est eiusmod id. Pariatur irure adipisicing voluptate aute nostrud aliqua eiusmod culpa occaecat quis officia. Exercitation quis id laborum sint consequat incididunt ut sit est anim. Veniam laborum minim reprehenderit Lorem cillum deserunt.</p>
-          </div>
-          <div class="project-actions">
-            <a href="" class="hover-translation">
-              Github
-              <svg class="icon" height="24" width="24">
-                <use xlink:href="{% static "img/github.svg" %}#github"></use>
-              </svg>
-            </a>
-            <a href="" class="hover-translation">
-              View
-              <svg class="icon" height="24" width="24">
-                <use xlink:href="{% static "img/external-link.svg" %}#external-link"></use>
-              </svg>
-            </a>
+      {% for project in object_list %}
+        <div class="project">
+          <img src="{{project.featured_image.url}}" alt="" class="cover">
+          <div class="project-details">
+            <h2 class="project-title"><a href="" class="link-with-underline">{{project.name}}</a></h2>
+            <div class="tech">
+              <ul>
+                {% for tech in project.tech.all %}
+                  <li>{{tech}}</li>
+                {% endfor %}
+              </ul>
+            </div>
+            <div class="description">
+              {{project.overview|safe}}
+            </div>
+            <div class="project-actions">
+              <a href="{{project.repo}}" class="hover-translation">
+                Github
+                <svg class="icon" height="24" width="24">
+                  <use xlink:href="{% static "img/github.svg" %}#github"></use>
+                </svg>
+              </a>
+              <a href="{{project.url}}" class="hover-translation">
+                View
+                <svg class="icon" height="24" width="24">
+                  <use xlink:href="{% static "img/external-link.svg" %}#external-link"></use>
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="project">
-        <img src="{% static "img/projects/3.jpg" %}" alt="" class="cover">
-        <div class="project-details">
-          <h2 class="project-title"><a href="" class="link-with-underline">Acoplados El Grillo</a></h2>
-          <div class="tech">
-            <ul>
-              <li>Django</li>
-              <li>Python</li>
-              <li>JavaScript</li>
-              <li>CSS</li>
-            </ul>
-          </div>
-          <div class="description">
-            <p>Fugiat irure nulla culpa anim elit esse consequat officia est. Laborum ullamco velit incididunt culpa elit incididunt reprehenderit. Dolore fugiat enim laboris est eiusmod id. Pariatur irure adipisicing voluptate aute nostrud aliqua eiusmod culpa occaecat quis officia. Exercitation quis id laborum sint consequat incididunt ut sit est anim. Veniam laborum minim reprehenderit Lorem cillum deserunt.</p>
-          </div>
-          <div class="project-actions">
-            <a href="" class="hover-translation">
-              Github
-              <svg class="icon" height="24" width="24">
-                <use xlink:href="{% static "img/github.svg" %}#github"></use>
-              </svg>
-            </a>
-            <a href="" class="hover-translation">
-              View
-              <svg class="icon" height="24" width="24">
-                <use xlink:href="{% static "img/external-link.svg" %}#external-link"></use>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </section>
 {% endblock content %}
