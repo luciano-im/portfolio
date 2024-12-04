@@ -87,7 +87,7 @@ class Project(models.Model):
 
 
 class ProjectImage(models.Model):
-    product = models.ForeignKey(Project, on_delete=models.CASCADE, verbose_name=_('Proyecto'))
+    product = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='project_image', verbose_name=_('Proyecto'))
     image = FilerImageField(on_delete=models.CASCADE, verbose_name=_('Imágen'))
 
     def __str__(self):

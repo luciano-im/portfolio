@@ -63,6 +63,14 @@ class ProjectsView(ListView):
         return Project.objects.filter(active=True).prefetch_related('tech')
 
 
+class ProjectView(DetailView):
+    model = Project
+    template_name = 'project.html'
+
+    def get_queryset(self):
+        return Project.objects.prefetch_related('tech', 'project_image').filter(active=True)
+
+
 @login_required
 def markdown_uploader(request):
     """

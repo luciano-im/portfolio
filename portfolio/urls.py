@@ -4,7 +4,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 from web.views import HomeView, BlogView, ThoughtsView, PostView, ThoughtView
-from web.views import ProjectsView
+from web.views import ProjectsView, ProjectView
 from web.views import markdown_uploader
 
 urlpatterns = [
@@ -19,6 +19,7 @@ urlpatterns = [
     path('thoughts', ThoughtsView.as_view(), name='thoughts'),
     path('thoughts/<slug:slug>', ThoughtView.as_view(), name='thought'),
     path('projects', ProjectsView.as_view(), name='projects'),
+    path('projects/<slug:slug>', ProjectView.as_view(), name='project'),
 ]
 
 if settings.DEBUG:

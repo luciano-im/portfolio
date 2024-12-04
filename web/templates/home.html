@@ -151,7 +151,7 @@
               <div class="project">
                 <img src="{{project.featured_image.url}}" alt="" class="cover">
                 <div class="project-details">
-                  <h2 class="project-title"><a href="" class="link-with-underline">{{project.name}}</a></h2>
+                  <h2 class="project-title"><a href="{% url 'project' project.slug %}" class="link-with-underline">{{project.name}}</a></h2>
                   <div class="tech">
                     <ul>
                       {% for tech in project.tech.all %}
