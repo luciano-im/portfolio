@@ -1,7 +1,7 @@
 from django import forms
 from taggit_labels.widgets import LabelWidget
 
-from web.models import Post, Project
+from web.models import Post, Project, ProjectImage
 from web.models import TagPost, TagProject
 
 
@@ -24,4 +24,14 @@ class ProjectForm(forms.ModelForm):
         widgets = {
             'slug': forms.TextInput(attrs={'readonly': True}),
             'tech': LabelWidget(model=TagProject)
+        }
+
+
+class ProjectImageForm(forms.ModelForm):
+
+    class Meta:
+        model = ProjectImage
+        fields = '__all__'
+        widgets = {
+            'width': forms.Select()
         }

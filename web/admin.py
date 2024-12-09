@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.utils.translation import gettext as _
 from adminsortable.admin import NonSortableParentAdmin, SortableStackedInline
 
-from web.forms import PostForm, ProjectForm
+from web.forms import PostForm, ProjectForm, ProjectImageForm
 from web.models import Post, Project, ProjectImage
 from web.models import TagPost, TagProject
 
@@ -31,6 +31,7 @@ class PostAdmin(admin.ModelAdmin):
 
 class ProjectImageInline(SortableStackedInline):
     model = ProjectImage
+    form = ProjectImageForm
     extra = 0
 
 

@@ -88,8 +88,15 @@ class Project(models.Model):
 
 
 class ProjectImage(SortableMixin):
+    IMAGE_WIDTH_CHOICES = [
+        ('25pct', _('25% ancho')),
+        ('50pct', _('50% ancho')),
+        ('100pct', _('100% ancho')),
+    ]
+
     product = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='project_image', verbose_name=_('Proyecto'))
     image = FilerImageField(on_delete=models.CASCADE, verbose_name=_('Imágen'))
+    width = models.CharField(max_length=10, choices=IMAGE_WIDTH_CHOICES, default='100pct', verbose_name=_('Ancho'))
     order_sortable = models.PositiveIntegerField(default=0, editable=False, db_index=True)
 
     def __str__(self):
