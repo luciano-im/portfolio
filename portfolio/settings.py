@@ -10,6 +10,9 @@ import time
 from dotenv import load_dotenv
 load_dotenv()
 
+from icecream import install
+install()
+
 # Determine if Django is running under the development server
 INSTANCE_RUNNING_ON_LOCALHOST = False
 # this check is needed to prevent 'out of range' error in apache production.
