@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from adminsortable.models import SortableMixin
 from filer.fields.image import FilerImageField
 from martor.models import MartorField
 from taggit.managers import TaggableManager
@@ -86,9 +87,10 @@ class Project(models.Model):
         verbose_name_plural = _('Proyectos')
 
 
-class ProjectImage(models.Model):
+class ProjectImage(SortableMixin):
     product = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='project_image', verbose_name=_('Proyecto'))
     image = FilerImageField(on_delete=models.CASCADE, verbose_name=_('Imágen'))
+    order_sortable = models.PositiveIntegerField(default=0, editable=False, db_index=True)
 
     def __str__(self):
         return self.image.name
@@ -96,3 +98,4 @@ class ProjectImage(models.Model):
     class Meta:
         verbose_name = _('Imágen del Proyecto')
         verbose_name_plural = _('Imágenes del Proyecto')
+        ordering = ['order_sortable']

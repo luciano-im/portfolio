@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.utils.translation import gettext as _
+from adminsortable.admin import NonSortableParentAdmin, SortableStackedInline
 
 from web.forms import PostForm, ProjectForm
 from web.models import Post, Project, ProjectImage
@@ -28,12 +29,12 @@ class PostAdmin(admin.ModelAdmin):
     )
 
 
-class ProjectImageInline(admin.StackedInline):
+class ProjectImageInline(SortableStackedInline):
     model = ProjectImage
-    extra = 1
+    extra = 0
 
 
-class ProjectAdmin(admin.ModelAdmin):
+class ProjectAdmin(NonSortableParentAdmin):
     form = ProjectForm
     list_display = ('name', 'year', 'overview', 'active')
     list_filter = ('active', 'name', 'year')
