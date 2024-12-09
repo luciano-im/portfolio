@@ -479,6 +479,38 @@ h3 {
   width: 16px;
 }
 
+#projects .project .image-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--md-gap);
+}
+
+#projects .project .image-gallery img {
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  width: auto;
+}
+
+#projects .project .image-gallery img:hover {
+  transform: scale(1.03);
+}
+
+#projects .project .image-gallery .img-25pct {
+  grid-column: auto / span 1;
+  max-width: calc(300px - var(--md-gap));
+}
+
+#projects .project .image-gallery .img-50pct {
+  grid-column: auto / span 2;
+  max-width: calc(600px - (var(--md-gap)/2));
+}
+
+#projects .project .image-gallery .img-100pct {
+  grid-column: auto / span 4;
+  max-width: 1200px;
+}
+
 /* BLOG STYLES */
 
 #blog .writings {

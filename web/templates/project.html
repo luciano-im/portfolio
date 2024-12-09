@@ -5,14 +5,14 @@
 
 {% block content %}
   <section id="projects">
+    <div class="tech">
+      <ul>
+        {% for tech in object.tech.all %}
+          <li>{{tech}}</li>
+        {% endfor %}
+      </ul>
+    </div>
     <div class="section-title">
-      <div class="tech">
-        <ul>
-          {% for tech in object.tech.all %}
-            <li>{{tech}}</li>
-          {% endfor %}
-        </ul>
-      </div>
       <div class="titles">
         <h1>{{object.name}}</h1>
       </div>
@@ -53,9 +53,12 @@
         {{object.conclusion|safe}}
       </div>
       <div class="section">
-        {% for img in object.project_image.all %}
-          <img src="{{img.image.url}}" alt="">
-        {% endfor %}
+        <h2>Imágenes del Proyecto</h2>
+        <div class="image-gallery">
+          {% for img in object.project_image.all %}
+            <img src="{{img.image.url}}" class="img-{{img.width}}" alt="">
+          {% endfor %}
+        </div>
       </div>
     </div>
   </section>
