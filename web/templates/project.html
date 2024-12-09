@@ -3,6 +3,10 @@
 
 {% block title %}Proyecto {{object.name}}  |  Luciano Muñoz - Full Stack Web Developer  |  Python and Javascript{% endblock title %}
 
+{% block header_extra %}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+{% endblock header_extra %}
+
 {% block content %}
   <section id="projects">
     <div class="tech">
@@ -63,3 +67,21 @@
     </div>
   </section>
 {% endblock content %}
+
+{% block body_extra %}
+  <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+  <script>
+    const lightbox = GLightbox({
+      selector: '.image-gallery img',
+      touchNavigation: true,
+      loop: true,
+      autoplayVideos: true,
+      openEffect: 'fade',
+      svg: {
+        close: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.9996 17.9996L6 6" stroke="#fff" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M17.9998 6.00035L6.00011 18" stroke="#fff" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+        next: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 16L13.7519 12.8321C14.3457 12.4362 14.3457 11.5638 13.7519 11.1679L9 8" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="0.2 0.2"/></svg>',
+        prev: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 8L10.2481 11.1679C9.65434 11.5638 9.65434 12.4362 10.2481 12.8321L15 16" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="0.2 0.2"/></svg>'
+      },
+    });
+  </script>
+{% endblock body_extra %}

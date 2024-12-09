@@ -616,3 +616,10 @@ footer p {
 footer .container p:nth-child(2) {
   text-align: right;
 }
+
+/* TWEAKS */
+
+/* Prevent glightbox fill svg icons */
+.glightbox-clean .gclose path, .glightbox-clean .gnext path, .glightbox-clean .gprev path {
+  fill: none !important;
+}

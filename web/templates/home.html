@@ -21,6 +21,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet">
 
+    {% block header_extra %}{% endblock header_extra %}
+
     <script>
       // Check if a theme is stored in local storage and apply it
       // This code runs outside the "load" event to avoid flickering on reload
@@ -225,5 +227,7 @@
         <p>Built with Python, Django, HTML and vanilla CSS 🤘</p>
       </div>
     </footer>
+
+    {% block body_extra %}{% endblock body_extra %}
   </body>
 </html>
