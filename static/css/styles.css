@@ -503,13 +503,15 @@ h3 {
 }
 
 #projects .project-details .project-actions p svg {
+  height: auto;
   margin-right: 5px;
+  width: 20px;
 }
 
 #projects .project .image-gallery {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: var(--md-gap);
+  gap: var(--sm-gap);
 }
 
 #projects .project .image-gallery img {
@@ -527,17 +529,20 @@ h3 {
 
 #projects .project .image-gallery .img-25pct {
   grid-column: auto / span 1;
-  max-width: calc(300px - var(--md-gap));
+  /* max-width: calc(300px - (var(--sm-gap)/4)); */
+  width: 100%;
 }
 
 #projects .project .image-gallery .img-50pct {
   grid-column: auto / span 2;
-  max-width: calc(600px - (var(--md-gap)/2));
+  /* max-width: calc(600px - (var(--sm-gap)/2)); */
+  width: 100%;
 }
 
 #projects .project .image-gallery .img-100pct {
   grid-column: auto / span 4;
-  max-width: 1200px;
+  /* max-width: 1200px; */
+  width: 100%;
 }
 
 #projects .project .section {
@@ -545,7 +550,8 @@ h3 {
 }
 
 #projects .project .section h2 {
-  opacity: .7;
+  margin-bottom: 1.2rem;
+  opacity: .8;
 }
 
 /* BLOG STYLES */
