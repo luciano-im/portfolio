@@ -113,4 +113,8 @@ class About(models.Model):
     updated_at = models.DateTimeField(auto_now=True, verbose_name='Fecha de Actualización')
 
     def __str__(self):
-        return _('About')
+        return str(_('Sobre mi'))
+
+    class Meta:
+        verbose_name = _('Sobre mi')
+        verbose_name_plural = _('Sobre mi')
