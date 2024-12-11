@@ -106,3 +106,11 @@ class ProjectImage(SortableMixin):
         verbose_name = _('Imágen del Proyecto')
         verbose_name_plural = _('Imágenes del Proyecto')
         ordering = ['order_sortable']
+
+
+class About(models.Model):
+    content = MartorField(verbose_name='Contenido')
+    updated_at = models.DateTimeField(auto_now=True, verbose_name='Fecha de Actualización')
+
+    def __str__(self):
+        return _('About')
