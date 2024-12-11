@@ -77,6 +77,36 @@
         });
       });
     </script>
+    <script>
+      window.addEventListener('load', () => {
+        const goUpButton = document.getElementById('go-up');
+        const viewportHeight = window.innerHeight;
+
+        function scrollFunction() {
+          if (document.body.scrollTop > viewportHeight || document.documentElement.scrollTop > viewportHeight) {
+            goUpButton.style.animationName = 'goUpShow';
+            goUpButton.classList.add('show');
+          } else {
+            goUpButton.style.animationName = 'goUpHide';
+            setTimout(() => {
+              goUpButton.classList.remove('show');
+            }, 500);
+          }
+        }
+
+        function topFunction() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }
+
+        goUpButton.addEventListener('click', () => {
+          topFunction();
+        });
+        window.addEventListener('scroll', () => {
+          scrollFunction();
+        });
+      });
+    </script>
   </head>
   <body>
     <nav id="main-nav">
@@ -227,7 +257,14 @@
         <p>Built with Python, Django, HTML and vanilla CSS 🤘</p>
       </div>
     </footer>
-
+    <div id="go-up">
+      <a href="" class="go-up-button">
+        <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 3L2.16795 1.24807C2.56377 0.654342 3.43623 0.654342 3.83205 1.24808L5 3" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+          <path d="M3.04321 1.26074V8.26074" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+        </svg>
+      </a>
+    </div>
     {% block body_extra %}{% endblock body_extra %}
   </body>
 </html>

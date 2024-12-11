@@ -106,6 +106,7 @@ body {
   font-style: normal;
   line-height: 1.5;
   margin: 0 auto;
+  position: relative;
 }
 
 body main {
@@ -643,6 +644,67 @@ footer p {
 
 footer .container p:nth-child(2) {
   text-align: right;
+}
+
+/* GO UP BUTTON */
+
+#go-up {
+  align-items: center;
+  animation-duration: 500ms;
+  animation-timing-function: ease-out;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  background-color: var(--accent-background-color);
+  border-radius: 100%;
+  bottom: 20px;
+  display: none;
+  height: 50px;
+  justify-content: center;
+  position: fixed;
+  right: 20px;
+  width: 50px;
+}
+
+#go-up.show {
+  display: flex;
+}
+
+#go-up a {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+#go-up svg {
+  color: var(--accent-text-color);
+  height: auto;
+  width: 10px;
+}
+
+@keyframes goUpShow {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes goUpHide {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
 }
 
 /* TWEAKS */
