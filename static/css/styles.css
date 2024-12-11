@@ -713,3 +713,40 @@ footer .container p:nth-child(2) {
 .glightbox-clean .gclose path, .glightbox-clean .gnext path, .glightbox-clean .gprev path {
   fill: none !important;
 }
+
+/* MEDIA QUERIES */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .d-sm-none {
+    display: none;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .d-md-none {
+    display: none;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .d-lg-none {
+    display: none;
+  }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .d-xl-none {
+    display: none;
+  }
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  .d-xxl-none {
+    display: none;
+  }
+}
