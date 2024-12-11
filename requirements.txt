@@ -50,3 +50,4 @@ tinycss2==1.4.0
 tzdata==2024.2
 urllib3==2.2.3
 webencodings==0.5.1
+whitenoise==6.8.2
