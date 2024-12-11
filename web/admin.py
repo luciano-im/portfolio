@@ -3,7 +3,7 @@ from django.utils.translation import gettext as _
 from adminsortable.admin import NonSortableParentAdmin, SortableStackedInline
 
 from web.forms import PostForm, ProjectForm, ProjectImageForm
-from web.models import Post, Project, ProjectImage
+from web.models import About, Post, Project, ProjectImage
 from web.models import TagPost, TagProject
 
 
@@ -57,7 +57,17 @@ class ProjectAdmin(NonSortableParentAdmin):
     )
 
 
+class AboutAdmin(admin.ModelAdmin):
+    list_display = ('id', 'updated_at',)
+    fieldsets = (
+        ('Contenido', {
+            'fields': ('content',),
+        }),
+    )
+
+
 admin.site.register(TagPost, TagAdmin)
 admin.site.register(TagProject, TagAdmin)
 admin.site.register(Post, PostAdmin)
 admin.site.register(Project, ProjectAdmin)
+admin.site.register(About, AboutAdmin)

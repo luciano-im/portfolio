@@ -13,7 +13,7 @@ from django.shortcuts import render
 
 from martor.utils import LazyEncoder
 
-from web.models import Post, Project
+from web.models import About, Post, Project
 
 
 class HomeView(TemplateView):
@@ -24,6 +24,15 @@ class HomeView(TemplateView):
         context['projects'] = Project.objects.filter(active=True).prefetch_related('tech')
         context['posts'] = Post.objects.filter(status='published', post_type='blog').order_by('-created_at')[:3]
         context['thoughts'] = Post.objects.filter(status='published', post_type='thought').order_by('-created_at')[:5]
+        return context
+
+
+class AboutView(TemplateView):
+    template_name = 'about.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['about'] = About.objects.latest('id')
         return context
 
 
