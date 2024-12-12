@@ -361,6 +361,45 @@ h3 {
   justify-content: flex-end;
 }
 
+#main-nav #nav-toggle {
+  display: none;
+}
+
+#main-nav #nav-toggle-btn span {
+  background: #cdcdcd;
+  border-radius: 3px;
+  display: block;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease;
+  width: 30px;
+  z-index: 1;
+}
+
+#main-nav #nav-toggle-btn span:first-child {
+  transform-origin: top left;
+}
+
+#main-nav #nav-toggle-btn span:nth-child(3) {
+  transform-origin: bottom left;
+}
+
+#main-nav #nav-toggle:checked ~ #nav-toggle-btn span {
+  background: #232323;
+  opacity: 1;
+  transform: rotate(42deg); 
+}
+
+#main-nav #nav-toggle:checked ~ #nav-toggle-btn span:nth-child(2) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#main-nav #nav-toggle:checked ~ #nav-toggle-btn span:nth-child(3) {
+  transform: rotate(-42deg);
+}
+
 /* INTRO STYLES */
 
 #intro {
