@@ -116,12 +116,12 @@
         </div>
         <div>
           <input type="checkbox" id="nav-toggle"/>
-          <label for="nav-toggle" id="nav-toggle-btn">
+          <label for="nav-toggle" id="nav-toggle-btn" class="d-md-none">
             <span></span>
             <span></span>
             <span></span>
           </label>
-          <ul>
+          <ul class="menu d-md-flex">
             <li><a href="{% url 'about' %}">About</a></li>
             <li><a href="{% url 'projects' %}">Projects</a></li>
             <li><a href="{% url 'blog' %}">Blog</a></li>
