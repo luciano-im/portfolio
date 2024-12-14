@@ -267,6 +267,18 @@ h3 {
   margin-right: var(--xs-gap);
 }
 
+.d-none {
+  display: none;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-grid {
+  display: grid;
+}
+
 /* THEME SELECTOR STYLES */
 
 .theme-selector {
