@@ -109,12 +109,12 @@
     </script>
   </head>
   <body>
-    <nav id="main-nav">
-      <div class="nav-top">
-        <div>
+    <nav id="main-nav" class="row">
+      <div class="nav-top row col-12">
+        <div class="col-9 col-sm-4">
           <span><a href="/">LUCIANO MUÑOZ</a></span>
         </div>
-        <div>
+        <div class="col-3 col-sm-8 d-flex jc-end">
           <input type="checkbox" id="nav-toggle"/>
           <label for="nav-toggle" id="nav-toggle-btn" class="d-md-none">
             <span></span>
@@ -134,21 +134,21 @@
           </ul>
         </div>
       </div>
-      <div class="nav-bottom">
+      <div class="nav-bottom row col-12">
         <a href="">EN</a><span class="vertical-divisor"></span><a href="">ES</a>
       </div>
     </nav>
-    <main>
+    <main class="d-grid">
       {% block content %}
-        <section id="intro">
-          <div class="photo">
+        <section id="hero" class="d-grid">
+          <div class="photo d-flex jc-center ai-start">
             <img src="{% static "img/me.png" %}" alt="">
           </div>
           <div class="description">
             <h1 class="hello">Hi there, I'm Luciano 👋</h1>
             <p>A Full Stack Web Developer from Argentina with 6+ years working as a freelance.</p>
             <p>Currently working with Python 🐍 and Javascript 💛.</p>
-            <div class="buttons-list">
+            <div class="buttons-list d-flex jc-center">
               <a href="" class="round-button black-button-lg hover-translation">
                 <svg class="icon" height="24" width="24">
                   <use xlink:href="{% static "img/github.svg" %}#github"></use>
