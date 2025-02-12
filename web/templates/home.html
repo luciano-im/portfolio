@@ -239,12 +239,12 @@
               <a href="" class="round-button outline-button-md hover-translation">See All</a>
             </div>
           </div>
-          <div class="writings row-md">
-            <div class="posts col-md-8">
+          <div class="writings row-lg">
+            <div class="posts col-lg-8">
               {% for post in posts %}
                 <article class="post">
                   <h3><a href="{% url 'post' post.slug %}" class="post-title link-with-underline">{{post.title}}</a></h3>
-                  <p class="date d-flex flex-column ai-sm-center">
+                  <p class="date d-flex flex-column flex-sm-row ai-sm-center">
                     <span><svg class="icon" height="24" width="24"><use xlink:href="{% static "img/calendar.svg" %}#calendar"></use></svg> Posted on {{post.published_at|date:"M d, Y"}}</span>
                     <span class="dot-divisor d-none d-sm-inline-block"></span>
                     <span><svg class="icon" height="24" width="24"><use xlink:href="{% static "img/clock.svg" %}#clock"></use></svg> {% get_reading_time post.content %}</span>
@@ -255,7 +255,7 @@
                 </article>
               {% endfor %}
             </div>
-            <div class="thoughts col-md-4">
+            <div class="thoughts col-lg-4">
               <h3>My Thoughts</h3>
               <ul>
                 {% for thought in thoughts %}
@@ -269,8 +269,8 @@
     </main>
     <footer>
       <div class="container row">
-        <p class="col-12">© 2024 Luciano Muñoz</p>
-        <p class="col-12">Built with Python, Django, HTML and vanilla CSS 🤘</p>
+        <p class="col-12 col-md-4">© 2024 Luciano Muñoz</p>
+        <p class="col-12 col-md-8">Built with Python, Django, HTML and vanilla CSS 🤘</p>
       </div>
     </footer>
     <div id="go-up">

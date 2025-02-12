@@ -856,6 +856,10 @@ footer p:first-child {
     padding: var(--sm-gap) var(--md-gap);
   }
 
+  footer .container p:nth-child(1) {
+    text-align: left;
+  }
+
   footer .container p:nth-child(2) {
     text-align: right;
   }
