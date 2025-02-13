@@ -830,6 +830,10 @@ footer p:first-child {
     margin-bottom: 0 !important;
   }
 
+  #hero .buttons-list a:last-child {
+    margin-right: var(--xs-gap);
+  }
+
   #projects .projects-list .project {
     filter: saturate(0);
     transition: filter 300ms ease-in-out;
@@ -869,6 +873,10 @@ footer p:first-child {
 @media (min-width: 992px) {
   #hero {
     grid-template-columns: 250px auto;
+  }
+
+  #hero .description {
+    text-align: left;
   }
 
   #projects .projects-list .project:nth-child(even) .project-details {
