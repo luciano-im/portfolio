@@ -844,12 +844,14 @@ footer p:first-child {
   }
 
   #projects .projects-list .project .cover {
-    margin: 35px 20px 0 20px;
     justify-content: center;
+    overflow: hidden;
   }
 
   #projects .projects-list .project .cover img {
-    max-width: 400px;
+    height: 350px;
+    object-fit: cover;
+    object-position: left top;
   }
 
   #projects .projects-list .project-details {
@@ -881,6 +883,15 @@ footer p:first-child {
 
   #projects .projects-list .project:nth-child(even) .project-details {
     padding: var(--sm-gap) 0 var(--sm-gap) var(--md-gap);
+  }
+
+  #projects .projects-list .project .cover {
+    padding: 0 20px;
+  }
+
+  #projects .projects-list .project .cover img {
+    height: auto;
+    max-width: 400px;
   }
 
   #projects .projects-list .project-details {

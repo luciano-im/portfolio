@@ -195,10 +195,10 @@
           <div class="projects-list">
             {% for project in projects %}
               <div class="project row">
-                <div class="cover col-12 col-lg-5">
+                <div class="cover col-12 col-lg-6 col-xl-5">
                   <img src="{{project.featured_image.url}}" alt="" >
                 </div>
-                <div class="project-details col-12 col-lg-7">
+                <div class="project-details col-12 col-lg-6 col-xl-7">
                   <h2 class="project-title"><a href="{% url 'project' project.slug %}" class="link-with-underline">{{project.name}}</a></h2>
                   <div class="tech">
                     <ul>
