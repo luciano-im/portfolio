@@ -13,9 +13,11 @@
     </div>
     <div class="projects-list">
       {% for project in object_list %}
-        <div class="project">
-          <img src="{{project.featured_image.url}}" alt="" class="cover">
-          <div class="project-details">
+        <div class="project row">
+          <div class="cover col-12 col-lg-6 col-xl-5">
+            <img src="{{project.featured_image.url}}" alt="" >
+          </div>
+          <div class="project-details col-12 col-lg-6 col-xl-7">
             <h2 class="project-title"><a href="{% url 'project' project.slug %}" class="link-with-underline">{{project.name}}</a></h2>
             <div class="tech">
               <ul>
@@ -27,7 +29,7 @@
             <div class="description">
               {{project.overview|safe}}
             </div>
-            <div class="project-actions">
+            <div class="project-actions d-flex">
               <a href="{{project.repo}}" class="hover-translation">
                 Github
                 <svg class="icon" height="24" width="24">
