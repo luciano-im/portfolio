@@ -658,9 +658,6 @@ h3 {
 }
 
 #blog .post .content {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  column-gap: var(--lg-gap);
   margin: var(--sm-gap) 0;
 }
 
@@ -674,6 +671,14 @@ h3 {
 
 #blog .post .content h3 {
   margin-top: 1.5rem;
+}
+
+#blog .post .content p {
+  word-wrap: break-word;
+}
+
+#blog .post .content pre {
+  overflow-y: scroll;
 }
 
 /* FOOTER STYLES */
