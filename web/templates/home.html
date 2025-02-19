@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="dark light">
     <link rel="stylesheet" href="{% static "css/styles.css" %}">
+    <link rel="stylesheet" href="{% static "css/grid.css" %}">
     <link rel="stylesheet" href="{% static "css/pygments_monokai.css" %}">
     <title>
       {% block title %}
@@ -109,19 +110,19 @@
     </script>
   </head>
   <body>
-    <nav id="main-nav">
-      <div class="nav-top">
-        <div>
+    <nav id="main-nav" class="row">
+      <div class="nav-top row col-12">
+        <div class="col-9 col-sm-4">
           <span><a href="/">LUCIANO MUÑOZ</a></span>
         </div>
-        <div>
+        <div class="col-3 col-sm-8 d-flex jc-end">
           <input type="checkbox" id="nav-toggle"/>
-          <label for="nav-toggle" id="nav-toggle-btn" class="d-md-none">
+          <label for="nav-toggle" id="nav-toggle-btn" class="d-inline-block d-md-none">
             <span></span>
             <span></span>
             <span></span>
           </label>
-          <ul class="menu d-md-flex">
+          <ul class="menu d-none d-md-flex">
             <li><a href="{% url 'about' %}">About</a></li>
             <li><a href="{% url 'projects' %}">Projects</a></li>
             <li><a href="{% url 'blog' %}">Blog</a></li>
@@ -134,37 +135,44 @@
           </ul>
         </div>
       </div>
-      <div class="nav-bottom">
+      <div class="nav-bottom col-12 d-flex ai-end jc-end">
         <a href="">EN</a><span class="vertical-divisor"></span><a href="">ES</a>
       </div>
     </nav>
     <main>
       {% block content %}
-        <section id="intro">
-          <div class="photo">
+        <section id="hero" class="row">
+          <div class="photo col-12 col-lg-1 d-flex jc-center jc-lg-start ai-start">
             <img src="{% static "img/me.png" %}" alt="">
           </div>
-          <div class="description">
+          <div class="description col-12 col-lg-1">
             <h1 class="hello">Hi there, I'm Luciano 👋</h1>
             <p>A Full Stack Web Developer from Argentina with 6+ years working as a freelance.</p>
             <p>Currently working with Python 🐍 and Javascript 💛.</p>
-            <div class="buttons-list">
-              <a href="" class="round-button black-button-lg hover-translation">
-                <svg class="icon" height="24" width="24">
-                  <use xlink:href="{% static "img/github.svg" %}#github"></use>
-                </svg>
-              </a>
-              <a href="" class="round-button black-button-lg hover-translation">
-                <svg class="icon" height="19" width="19">
-                  <use xlink:href="{% static "img/linkedin.svg" %}#linkedin"></use>
-                </svg>
-              </a>
-              <a href="" class="round-button black-button-lg button-with-icon hover-translation">
-                hola@luciano.im
-                <svg class="icon" width="24" height="24">
-                  <use xlink:href="{% static "img/email.svg" %}#email"></use>
-                </svg>
-              </a>
+            <div class="buttons-list d-flex flex-column flex-md-row ai-center ai-md-start jc-md-center jc-lg-start">
+              <div class="d-flex jc-center">
+                <a href="" class="round-button black-button-lg hover-translation">
+                  <svg class="icon" height="24" width="24">
+                    <use xlink:href="{% static "img/github.svg" %}#github"></use>
+                  </svg>
+                </a>
+                <a href="" class="round-button black-button-lg hover-translation">
+                  <svg class="icon" height="19" width="19">
+                    <use xlink:href="{% static "img/linkedin.svg" %}#linkedin"></use>
+                  </svg>
+                </a>
+                <a href="" class="d-sm-none round-button black-button-lg hover-translation">
+                  <svg class="icon" width="24" height="24">
+                    <use xlink:href="{% static "img/email.svg" %}#email"></use>
+                  </svg>
+                </a>
+                <a href="" class="d-none d-sm-inline-flex round-button black-button-lg button-with-icon hover-translation">
+                  hola@luciano.im
+                  <svg class="icon" width="24" height="24">
+                    <use xlink:href="{% static "img/email.svg" %}#email"></use>
+                  </svg>
+                </a>
+              </div>
               <a href="" class="round-button outline-button-lg button-with-icon hover-translation">
                 Download CV
                 <svg class="icon" width="24" height="24">
@@ -186,9 +194,11 @@
           </div>
           <div class="projects-list">
             {% for project in projects %}
-              <div class="project">
-                <img src="{{project.featured_image.url}}" alt="" class="cover">
-                <div class="project-details">
+              <div class="project row">
+                <div class="cover col-12 col-lg-6 col-xl-5">
+                  <img src="{{project.featured_image.url}}" alt="" >
+                </div>
+                <div class="project-details col-12 col-lg-6 col-xl-7">
                   <h2 class="project-title"><a href="{% url 'project' project.slug %}" class="link-with-underline">{{project.name}}</a></h2>
                   <div class="tech">
                     <ul>
@@ -200,7 +210,7 @@
                   <div class="description">
                     {{project.overview|safe}}
                   </div>
-                  <div class="project-actions">
+                  <div class="project-actions d-flex">
                     <a href="{{project.repo}}" class="hover-translation">
                       Github
                       <svg class="icon" height="24" width="24">
@@ -229,15 +239,15 @@
               <a href="" class="round-button outline-button-md hover-translation">See All</a>
             </div>
           </div>
-          <div class="writings">
-            <div class="posts">
+          <div class="writings row-lg">
+            <div class="posts col-lg-8">
               {% for post in posts %}
                 <article class="post">
                   <h3><a href="{% url 'post' post.slug %}" class="post-title link-with-underline">{{post.title}}</a></h3>
-                  <p class="date">
-                    <svg class="icon" height="24" width="24"><use xlink:href="{% static "img/calendar.svg" %}#calendar"></use></svg> Posted on {{post.published_at|date:"M d, Y"}}
-                    <span class="dot-divisor"></span>
-                    <svg class="icon" height="24" width="24"><use xlink:href="{% static "img/clock.svg" %}#clock"></use></svg> {% get_reading_time post.content %}
+                  <p class="date d-flex flex-column flex-sm-row ai-sm-center">
+                    <span><svg class="icon" height="24" width="24"><use xlink:href="{% static "img/calendar.svg" %}#calendar"></use></svg> Posted on {{post.published_at|date:"M d, Y"}}</span>
+                    <span class="dot-divisor d-none d-sm-inline-block"></span>
+                    <span><svg class="icon" height="24" width="24"><use xlink:href="{% static "img/clock.svg" %}#clock"></use></svg> {% get_reading_time post.content %}</span>
                   </p>
                   <div class="resume">
                     {{post.excerpt|render_markdown}}
@@ -245,7 +255,7 @@
                 </article>
               {% endfor %}
             </div>
-            <div class="thoughts">
+            <div class="thoughts col-lg-4">
               <h3>My Thoughts</h3>
               <ul>
                 {% for thought in thoughts %}
@@ -258,9 +268,9 @@
       {% endblock content %}
     </main>
     <footer>
-      <div class="container">
-        <p>© 2024 Luciano Muñoz</p>
-        <p>Built with Python, Django, HTML and vanilla CSS 🤘</p>
+      <div class="container row">
+        <p class="col-12 col-md-4">© 2024 Luciano Muñoz</p>
+        <p class="col-12 col-md-8">Built with Python, Django, HTML and vanilla CSS 🤘</p>
       </div>
     </footer>
     <div id="go-up">

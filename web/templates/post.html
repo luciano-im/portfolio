@@ -16,10 +16,10 @@
         </ul>
       </div>
       <h1>{{object.title}}</h1>
-      <p class="date">
-        <svg class="icon" height="24" width="24"><use xlink:href="{% static "img/calendar.svg" %}#calendar"></use></svg> Posted on {{object.published_at|date:"M d, Y"}}
-        <span class="dot-divisor"></span>
-        <svg class="icon" height="24" width="24"><use xlink:href="{% static "img/clock.svg" %}#clock"></use></svg> {% get_reading_time object.content %}
+      <p class="date d-flex flex-column flex-sm-row ai-sm-center">
+        <span><svg class="icon" height="24" width="24"><use xlink:href="{% static "img/calendar.svg" %}#calendar"></use></svg> Posted on {{post.published_at|date:"M d, Y"}}</span>
+        <span class="dot-divisor d-none d-sm-inline-block"></span>
+        <span><svg class="icon" height="24" width="24"><use xlink:href="{% static "img/clock.svg" %}#clock"></use></svg> {% get_reading_time post.content %}</span>
       </p>
       <div class="content">
         <div>
