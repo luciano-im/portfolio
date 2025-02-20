@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.utils.translation import gettext as _
 from adminsortable.admin import NonSortableParentAdmin, SortableStackedInline
+from modeltranslation.admin import TabbedTranslationAdmin
 
 from web.forms import PostForm, ProjectForm, ProjectImageForm
 from web.models import About, Post, Project, ProjectImage
@@ -35,7 +36,7 @@ class ProjectImageInline(SortableStackedInline):
     extra = 0
 
 
-class ProjectAdmin(NonSortableParentAdmin):
+class ProjectAdmin(TabbedTranslationAdmin, NonSortableParentAdmin):
     form = ProjectForm
     list_display = ('name', 'year', 'overview', 'active')
     list_filter = ('active', 'name', 'year')
@@ -57,7 +58,7 @@ class ProjectAdmin(NonSortableParentAdmin):
     )
 
 
-class AboutAdmin(admin.ModelAdmin):
+class AboutAdmin(TabbedTranslationAdmin, admin.ModelAdmin):
     list_display = ('id', 'updated_at',)
     fieldsets = (
         ('Contenido', {

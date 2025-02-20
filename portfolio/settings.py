@@ -7,6 +7,8 @@ import sys
 import os
 import time
 
+from django.utils.translation import gettext_lazy as _
+
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -40,6 +42,7 @@ else:
 # Application definition
 
 INSTALLED_APPS = [
+    'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -130,6 +133,11 @@ TIME_ZONE = 'America/Argentina/Buenos_Aires'
 USE_I18N = True
 
 USE_TZ = True
+
+LANGUAGES = [
+    ('es', _('Español')),
+    ('en', _('English')),
+]
 
 # This work if USE_L10N is set to True
 USE_THOUSAND_SEPARATOR = True
