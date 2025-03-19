@@ -1,5 +1,6 @@
 {% extends "home.html" %}
 {% load static %}
+{% load render_markdown %}
 
 {% block title %}About  |  Luciano Muñoz - Full Stack Web Developer  |  Python and Javascript{% endblock title %}
 
@@ -12,7 +13,7 @@
       </div>
     </div>
     <div class="content">
-      {{about.content}}
+      {{about.content|render_markdown}}
     </div>
   </section>
 {% endblock content %}
