@@ -681,6 +681,17 @@ h3 {
   overflow-y: scroll;
 }
 
+/* ABOUT PAGE */
+
+#about p:has(img) {
+  text-align: center;
+}
+
+#about img {
+  max-width: 600px;
+  width: 100%;
+}
+
 /* FOOTER STYLES */
 
 footer {
