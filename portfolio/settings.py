@@ -34,10 +34,9 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = os.getenv('DEBUG')
 
 if not INSTANCE_RUNNING_ON_LOCALHOST:
-    ALLOWED_HOSTS = ['luciano.im']
+    ALLOWED_HOSTS = [os.getenv('ALLOWED_HOSTS_PROD')]
 else:
-    ALLOWED_HOSTS = []
-
+    ALLOWED_HOSTS = [os.getenv('ALLOWED_HOSTS_DEV')]
 
 # Application definition
 
