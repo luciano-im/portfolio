@@ -106,6 +106,14 @@
         window.addEventListener('scroll', () => {
           scrollFunction();
         });
+
+        const emailAdressButton = document.querySelector('a.with-tooltip');
+        const tooltip = emailAdressButton.querySelector('.tooltip');
+        emailAdressButton.addEventListener('click', (e) => {
+          e.preventDefault();
+          navigator.clipboard.writeText('hola@luciano.im');
+          tooltip.innerText = 'Copied to clipboard!';
+        });
       });
     </script>
   </head>
@@ -151,26 +159,27 @@
             <p>Currently working with Python 🐍 and Javascript 💛.</p>
             <div class="buttons-list d-flex flex-column flex-md-row ai-center ai-md-start jc-md-center jc-lg-start">
               <div class="d-flex jc-center">
-                <a href="" class="round-button black-button-lg hover-translation">
+                <a href="https://github.com/luciano-im" class="round-button black-button-lg hover-translation" target="_blank">
                   <svg class="icon" height="24" width="24">
                     <use xlink:href="{% static "img/github.svg" %}#github"></use>
                   </svg>
                 </a>
-                <a href="" class="round-button black-button-lg hover-translation">
+                <a href="https://www.linkedin.com/in/luciano-mu%C3%B1oz/" class="round-button black-button-lg hover-translation">
                   <svg class="icon" height="19" width="19">
                     <use xlink:href="{% static "img/linkedin.svg" %}#linkedin"></use>
                   </svg>
                 </a>
-                <a href="" class="d-sm-none round-button black-button-lg hover-translation">
+                <a href="mailto:hola@luciano.im" class="d-sm-none round-button black-button-lg hover-translation">
                   <svg class="icon" width="24" height="24">
                     <use xlink:href="{% static "img/email.svg" %}#email"></use>
                   </svg>
                 </a>
-                <a href="" class="d-none d-sm-inline-flex round-button black-button-lg button-with-icon hover-translation">
+                <a href="" class="d-none d-sm-inline-flex round-button black-button-lg button-with-icon hover-translation with-tooltip">
                   hola@luciano.im
                   <svg class="icon" width="24" height="24">
                     <use xlink:href="{% static "img/email.svg" %}#email"></use>
                   </svg>
+                  <span class="tooltip">Click to copy</span>
                 </a>
               </div>
               <a href="" class="round-button outline-button-lg button-with-icon hover-translation">

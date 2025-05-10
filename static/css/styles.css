@@ -266,6 +266,42 @@ h3 {
   margin-right: var(--xs-gap);
 }
 
+.tooltip {
+  background-color: var(--color-lightgrey);
+  border-radius: 999em;
+  bottom: -50px;
+  box-sizing: border-box;
+  color: var(--main-text-color);
+  display: none;
+  font-size: .8rem;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding: .5rem 1rem;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  width: 186px;
+}
+
+.tooltip::after {
+  border-color: var(--color-lightgrey);
+  border-style: solid;
+  border-width: 5px;
+  content: "";
+  height: 0;
+  left: 50%;
+  margin-left: -5px;
+  position: absolute;
+  top: -5px;
+  transform: rotate(45deg);
+  width: 0;
+}
+
+.with-tooltip:hover .tooltip {
+  display: block;
+}
+
 /* THEME SELECTOR STYLES */
 
 .theme-selector {
