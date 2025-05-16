@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 {% load get_reading_time %}
 {% load render_markdown %}
 
@@ -143,8 +144,22 @@
           </ul>
         </div>
       </div>
+      
       <div class="nav-bottom col-12 d-flex ai-end jc-end">
-        <a href="">EN</a><span class="vertical-divisor"></span><a href="">ES</a>
+        <form action="{% url "set_language" %}" method="post" class="form-language">
+          {% csrf_token %}
+          <input name="next" type="hidden" value="{{ redirect_to }}" />
+          {% get_current_language as LANGUAGE_CODE %}
+          {% get_available_languages as languages %}
+          {% for lang in languages %}
+            <button type="submit" name="language" value="{{ lang.0 }}" class="{% if lang.0 == LANGUAGE_CODE %}selected{% endif %}">
+              {{ lang.0 }}
+            </button>
+            {% if not forloop.last %}
+              <span class="vertical-divisor"></span>
+            {% endif %}
+          {% endfor %}
+        </form>
       </div>
     </nav>
     <main>

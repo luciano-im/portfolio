@@ -9,6 +9,7 @@ from web.views import markdown_uploader
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('i18n/', include('django.conf.urls.i18n')),
     path('martor/', include('martor.urls')),
     path('api/uploader/', markdown_uploader, name='markdown_uploader_page'),
     path('tinymce/', include('tinymce.urls')),
