@@ -3,7 +3,7 @@
 {% load get_reading_time %}
 {% load render_markdown %}
 
-{% block title %}{{object.title}} | Luciano Muñoz - Full Stack Web Developer | Python and Javascript{% endblock title %}
+{% block title %}{{object.title}} | Luciano Muñoz - Full Stack Web Developer | {% translate "Python y Javascript" context "Page title" %}{% endblock title %}
 
 {% block content %}
   <section id="blog">
@@ -17,7 +17,7 @@
       </div>
       <h1>{{object.title}}</h1>
       <p class="date d-flex flex-column flex-sm-row ai-sm-center">
-        <span><svg class="icon" height="24" width="24"><use xlink:href="{% static "img/calendar.svg" %}#calendar"></use></svg> Posted on {{post.published_at|date:"M d, Y"}}</span>
+        <span><svg class="icon" height="24" width="24"><use xlink:href="{% static "img/calendar.svg" %}#calendar"></use></svg> {% translate "Posteado el" %} {{post.published_at|date:"M d, Y"}}</span>
         <span class="dot-divisor d-none d-sm-inline-block"></span>
         <span><svg class="icon" height="24" width="24"><use xlink:href="{% static "img/clock.svg" %}#clock"></use></svg> {% get_reading_time post.content %}</span>
       </p>

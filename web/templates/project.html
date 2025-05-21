@@ -1,7 +1,7 @@
 {% extends "home.html" %}
 {% load static %}
 
-{% block title %}Proyecto {{object.name}}  |  Luciano Muñoz - Full Stack Web Developer  |  Python and Javascript{% endblock title %}
+{% block title %}Proyecto {{object.name}}  |  Luciano Muñoz - Full Stack Web Developer  |  {% translate "Python y Javascript" context "Page title" %}{% endblock title %}
 
 {% block header_extra %}
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
@@ -27,37 +27,37 @@
           {{object.overview|safe}}
         </div>
         <div class="project-actions">
-          <p><svg class="icon" height="24" width="24"><use xlink:href="{% static "img/calendar.svg" %}#calendar"></use></svg> year: {{object.year}}</p>
+          <p><svg class="icon" height="24" width="24"><use xlink:href="{% static "img/calendar.svg" %}#calendar"></use></svg> {% translate "año" %}: {{object.year}}</p>
           <p><svg class="icon" height="24" width="24"><use xlink:href="{% static "img/github.svg" %}#github"></use></svg> repo: <a href="{{object.repo}}">{{object.repo}}</a></p>
-          <p><svg class="icon" height="24" width="24"><use xlink:href="{% static "img/external-link.svg" %}#external-link"></use></svg> view:  <a href="{{object.url}}">{{object.url}}</a></p>
+          <p><svg class="icon" height="24" width="24"><use xlink:href="{% static "img/external-link.svg" %}#external-link"></use></svg> {% translate "ver" %}:  <a href="{{object.url}}">{{object.url}}</a></p>
         </div>
       </div>
       <div class="section">
-        <h2>Introduction</h2>
+        <h2>{% translate "Introducción" context "Project content title" %}</h2>
         {{object.intro|safe}}
       </div>
       <div class="section">
-        <h2>Objetivos</h2>
+        <h2>{% translate "Objetivos" context "Project content title" %}</h2>
         {{object.goals|safe}}
       </div>
       <div class="section">
-        <h2>Desafíos</h2>
+        <h2>{% translate "Desafíos" context "Project content title" %}</h2>
         {{object.challenges|safe}}
       </div>
       <div class="section">
-        <h2>Solución</h2>
+        <h2>{% translate "Solución" context "Project content title" %}</h2>
         {{object.solutions|safe}}
       </div>
       <div class="section">
-        <h2>Impacto</h2>
+        <h2>{% translate "Impacto" context "Project content title" %}</h2>
         {{object.impact|safe}}
       </div>
       <div class="section">
-        <h2>Conclusiones</h2>
+        <h2>{% translate "Conclusiones" context "Project content title" %}</h2>
         {{object.conclusion|safe}}
       </div>
       <div class="section">
-        <h2>Imágenes del Proyecto</h2>
+        <h2>{% translate "Imágenes del Proyecto" context "Project content title" %}</h2>
         <div class="image-gallery">
           {% for img in object.project_image.all %}
             <img src="{{img.image.url}}" class="img-{{img.width}}" alt="">

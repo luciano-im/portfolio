@@ -1,14 +1,14 @@
 {% extends "home.html" %}
 {% load static %}
 
-{% block title %}Proyectos  |  Luciano Muñoz - Full Stack Web Developer  |  Python and Javascript{% endblock title %}
+{% block title %}Proyectos  |  Luciano Muñoz - Full Stack Web Developer  |  {% translate "Python y Javascript" context "Page title" %}{% endblock title %}
 
 {% block content %}
   <section id="projects">
     <div class="section-title">
       <div class="titles">
-        <h2>Projects</h2>
-        <h3>Let's have a look at my portfolio</h3>
+        <h2>{% translate "Proyectos" context "Section title" %}</h2>
+        <h3>{% translate "Echa un vistazo a mi portfolio" context "Section subtitle" %}</h3>
       </div>
     </div>
     <div class="projects-list">
@@ -37,7 +37,7 @@
                 </svg>
               </a>
               <a href="{{project.url}}" class="hover-translation">
-                View
+                {% translate "Ver" context "View button" %}
                 <svg class="icon" height="24" width="24">
                   <use xlink:href="{% static "img/external-link.svg" %}#external-link"></use>
                 </svg>

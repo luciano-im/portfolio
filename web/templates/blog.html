@@ -1,19 +1,20 @@
 {% extends "home.html" %}
 {% load static %}
+{% load i18n %}
 {% load get_reading_time %}
 {% load render_markdown %}
 
-{% block title %}Blog  |  Luciano Muñoz - Full Stack Web Developer  |  Python and Javascript{% endblock title %}
+{% block title %}Blog  |  Luciano Muñoz - Full Stack Web Developer  |  {% translate "Python y Javascript" context "Page title" %}{% endblock title %}
 
 {% block content %}
   <section id="blog">
     <div class="section-title">
       <div class="titles">
         <h2>Blog</h2>
-        <h3>Chekout what I have to say</h3>
+        <h3>Esto es lo que tengo para decir.</h3>
       </div>
       <div class="actions">
-        <a href="" class="round-button outline-button-md hover-translation">See my thought too!</a>
+        <a href="" class="round-button outline-button-md hover-translation">{% translate "Ver mis posts de opinion!" context "Got to Thoughts button" %}</a>
       </div>
     </div>
     <div class="writings">
@@ -22,7 +23,7 @@
           <article class="post">
             <h3><a href="{% url 'post' post.slug %}" class="post-title link-with-underline">{{post.title}}</a></h3>
             <p class="date d-flex flex-column flex-sm-row ai-sm-center">
-              <span><svg class="icon" height="24" width="24"><use xlink:href="{% static "img/calendar.svg" %}#calendar"></use></svg> Posted on {{post.published_at|date:"M d, Y"}}</span>
+              <span><svg class="icon" height="24" width="24"><use xlink:href="{% static "img/calendar.svg" %}#calendar"></use></svg> {% translate "Posteado el" %} {{post.published_at|date:"M d, Y"}}</span>
               <span class="dot-divisor d-none d-sm-inline-block"></span>
               <span><svg class="icon" height="24" width="24"><use xlink:href="{% static "img/clock.svg" %}#clock"></use></svg> {% get_reading_time post.content %}</span>
             </p>

@@ -136,7 +136,7 @@ USE_TZ = True
 
 LANGUAGES = [
     ('es', _('Español')),
-    ('en', _('English')),
+    ('en', _('Inglés')),
 ]
 
 # This work if USE_L10N is set to True

@@ -1,15 +1,16 @@
 {% extends "home.html" %}
 {% load static %}
+{% load i18n %}
 {% load render_markdown %}
 
-{% block title %}About  |  Luciano Muñoz - Full Stack Web Developer  |  Python and Javascript{% endblock title %}
+{% block title %}About  |  Luciano Muñoz - Full Stack Web Developer  |  {% translate "Python y Javascript" context "Page title" %}{% endblock title %}
 
 {% block content %}
   <section id="about">
     <div class="section-title">
       <div class="titles">
-        <h2>About Me</h2>
-        <h3>This is what I think about our profession, about the world, about life.</h3>
+        <h2>{% translate "Quién soy?" context "About me title" %}</h2>
+        <h3>Te invito a leer un poco acerca de mí, quién soy y con qué tecnologías trabajo.</h3>
       </div>
     </div>
     <div class="content">

@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="{% static "css/pygments_monokai.css" %}">
     <title>
       {% block title %}
-        Luciano Muñoz - Full Stack Web Developer  |  Python and Javascript
+        Luciano Muñoz - Full Stack Web Developer  |  {% translate "Python y Javascript" context "Page title" %}
       {% endblock title %}
     </title>
 
@@ -113,7 +113,7 @@
         emailAdressButton.addEventListener('click', (e) => {
           e.preventDefault();
           navigator.clipboard.writeText('hola@luciano.im');
-          tooltip.innerText = 'Copied to clipboard!';
+          tooltip.innerText = '{% translate "Copiado al portapapeles!" %}';
         });
       });
     </script>
@@ -132,10 +132,10 @@
             <span></span>
           </label>
           <ul class="menu d-none d-md-flex">
-            <li><a href="{% url 'about' %}">About</a></li>
-            <li><a href="{% url 'projects' %}">Projects</a></li>
+            <li><a href="{% url 'about' %}">{% translate "Acerca de mí" context "Navigation" %}</a></li>
+            <li><a href="{% url 'projects' %}">{% translate "Proyectos" context "Navigation" %}</a></li>
             <li><a href="{% url 'blog' %}">Blog</a></li>
-            <li><a href="{% url 'thoughts' %}">Thoughts</a></li>
+            <li><a href="{% url 'thoughts' %}">{% translate "Opinión" context "Navigation" %}</a></li>
             <li class="theme-selector">
               <div class="container">
                 <span class="icon"></span>
@@ -169,9 +169,9 @@
             <img src="{% static "img/me.png" %}" alt="">
           </div>
           <div class="description col-12 col-lg-1">
-            <h1 class="hello">Hi there, I'm Luciano 👋</h1>
-            <p>A Full Stack Web Developer from Argentina with 6+ years working as a freelance.</p>
-            <p>Currently working with Python 🐍 and Javascript 💛.</p>
+            <h1 class="hello">{% translate "Hola, soy Luciano" context "Hero section" %} 👋</h1>
+            <p>{% translate "Un programador web Full Stack de Argentina con más de 6 años de experiencia trabajando como freelance." context "Hero section" %}</p>
+            <p>{% translate "Actualmente trabajando con Python 🐍 y Javascript 💛." context "Hero section" %}</p>
             <div class="buttons-list d-flex flex-column flex-md-row ai-center ai-md-start jc-md-center jc-lg-start">
               <div class="d-flex jc-center">
                 <a href="https://github.com/luciano-im" class="round-button black-button-lg hover-translation" target="_blank">
@@ -194,11 +194,11 @@
                   <svg class="icon" width="24" height="24">
                     <use xlink:href="{% static "img/email.svg" %}#email"></use>
                   </svg>
-                  <span class="tooltip">Click to copy</span>
+                  <span class="tooltip">{% translate "Click para copiar" context "Email button tooltip" %}</span>
                 </a>
               </div>
               <a href="" class="round-button outline-button-lg button-with-icon hover-translation">
-                Download CV
+                {% translate "Descargar CV" context "Download CV button" %}
                 <svg class="icon" width="24" height="24">
                   <use xlink:href="{% static "img/download.svg" %}#download"></use>
                 </svg>
@@ -209,11 +209,11 @@
         <section id="projects">
           <div class="section-title">
             <div class="titles">
-              <h2>Projects</h2>
-              <h3>Let's have a look at my portfolio</h3>
+              <h2>{% translate "Proyectos" context "Section title" %}</h2>
+              <h3>{% translate "Echa un vistazo a mi portfolio" context "Section subtitle" %}</h3>
             </div>
             <div class="actions">
-              <a href="{% url 'projects' %}" class="round-button outline-button-md hover-translation">See All</a>
+              <a href="{% url 'projects' %}" class="round-button outline-button-md hover-translation">{% translate "Ver todo" context "More button" %}</a>
             </div>
           </div>
           <div class="projects-list">
@@ -242,7 +242,7 @@
                       </svg>
                     </a>
                     <a href="{{project.url}}" class="hover-translation">
-                      View
+                      {% translate "Ver" context "View button" %}
                       <svg class="icon" height="24" width="24">
                         <use xlink:href="{% static "img/external-link.svg" %}#external-link"></use>
                       </svg>
@@ -269,7 +269,7 @@
                 <article class="post">
                   <h3><a href="{% url 'post' post.slug %}" class="post-title link-with-underline">{{post.title}}</a></h3>
                   <p class="date d-flex flex-column flex-sm-row ai-sm-center">
-                    <span><svg class="icon" height="24" width="24"><use xlink:href="{% static "img/calendar.svg" %}#calendar"></use></svg> Posted on {{post.published_at|date:"M d, Y"}}</span>
+                    <span><svg class="icon" height="24" width="24"><use xlink:href="{% static "img/calendar.svg" %}#calendar"></use></svg> {% translate "Posteado el" %} {{post.published_at|date:"M d, Y"}}</span>
                     <span class="dot-divisor d-none d-sm-inline-block"></span>
                     <span><svg class="icon" height="24" width="24"><use xlink:href="{% static "img/clock.svg" %}#clock"></use></svg> {% get_reading_time post.content %}</span>
                   </p>
@@ -280,7 +280,7 @@
               {% endfor %}
             </div>
             <div class="thoughts col-lg-4">
-              <h3>My Thoughts</h3>
+              <h3>{% translate "Mis opiniones" context "Section title" %}</h3>
               <ul>
                 {% for thought in thoughts %}
                   <li><span class="date">{{thought.published_at|date:"Y-m-d"}}</span> <a href="{% url 'thought' thought.slug %}" class="post-title link-with-underline">{{thought.title}}</a></li>
@@ -293,8 +293,8 @@
     </main>
     <footer>
       <div class="container row">
-        <p class="col-12 col-md-4">© 2024 Luciano Muñoz</p>
-        <p class="col-12 col-md-8">Built with Python, Django, HTML and vanilla CSS 🤘</p>
+        <p class="col-12 col-md-4">© 2025 Luciano Muñoz</p>
+        <p class="col-12 col-md-8">{% translate "Desarrollado con Python, Django, HTML y CSS Vanilla" context "Section title" %} 🤘</p>
       </div>
     </footer>
     <div id="go-up">

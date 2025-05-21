@@ -97,7 +97,7 @@ def markdown_uploader(request):
             if image.content_type not in image_types:
                 data = json.dumps({
                     'status': 405,
-                    'error': _('Bad image format.')
+                    'error': _('Formato de imágen incorrecto.')
                 }, cls=LazyEncoder)
                 return HttpResponse(
                     data, content_type='application/json', status=405)
@@ -106,7 +106,7 @@ def markdown_uploader(request):
                 to_MB = settings.MAX_IMAGE_UPLOAD_SIZE / (1024 * 1024)
                 data = json.dumps({
                     'status': 405,
-                    'error': _('Maximum image file is %(size)s MB.') % {'size': to_MB}
+                    'error': _('El tamáño máximo de imágen permitido es de %(size)s MB.') % {'size': to_MB}
                 }, cls=LazyEncoder)
                 return HttpResponse(
                     data, content_type='application/json', status=405)
@@ -122,5 +122,5 @@ def markdown_uploader(request):
                 'name': image.name
             })
             return HttpResponse(data, content_type='application/json')
-        return HttpResponse(_('Invalid request!'))
-    return HttpResponse(_('Invalid request!'))
+        return HttpResponse(_('Solicitud inválida!'))
+    return HttpResponse(_('Solicitud inválida!'))
