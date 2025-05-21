@@ -1,0 +1,332 @@
+# Luciano Portfolio
+# Copyright (C) 2025
+# Luciano Muñoz <hola@luciano.im>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-21 19:49-0300\n"
+"PO-Revision-Date: 2025-05-21 19:16-0300\n"
+"Last-Translator: Luciano Muñoz <hola@luciano.im>\n"
+"Language: English\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: admin.py:24 admin.py:55
+msgid "Contenido"
+msgstr "Content"
+
+#: admin.py:27
+msgid "Extracto"
+msgstr "Excerpt"
+
+#: admin.py:49
+msgid "URLs"
+msgstr "URLs"
+
+#: admin.py:52
+msgid "Resumen"
+msgstr "Overview"
+
+#: models.py:52 models.py:80
+msgid "Imágen Destacada"
+msgstr "Featured Image"
+
+#: models.py:54
+msgid "Selecciona uno o más tags"
+msgstr "Select one or more tags"
+
+#: models.py:61
+msgid "Posts"
+msgstr "Posts"
+
+#: models.py:62
+msgid "Post"
+msgstr "Post"
+
+#: models.py:66
+msgid "Nombre del Proyecto"
+msgstr "Project Name"
+
+#: models.py:68
+msgid "Activo"
+msgstr "Active"
+
+#: models.py:69
+msgid "Descripción General"
+msgstr "Overview"
+
+#: models.py:70
+msgid "Año"
+msgstr "Year"
+
+#: models.py:71
+msgid "URL del Repositorio"
+msgstr "Repository URL"
+
+#: models.py:71
+msgid "URL de GitHub, GitLab, BitBucket, etc."
+msgstr "URL of GitHub, GitLab, BitBucket, etc."
+
+#: models.py:72
+msgid "URL del Proyecto"
+msgstr "Project URL"
+
+#: models.py:73
+msgid "Introducción"
+msgstr "Introduction"
+
+#: models.py:74
+msgid "Objetivos"
+msgstr "Goals"
+
+#: models.py:75
+msgid "Desafíos y Dificultades"
+msgstr "Challenges"
+
+#: models.py:76
+msgid "Soluciones Implementadas"
+msgstr "Implemented Solutions"
+
+#: models.py:77
+msgid "Impactos del Proyecto"
+msgstr "Project Impacts"
+
+#: models.py:78
+msgid "Conclusión"
+msgstr "Conclusion"
+
+#: models.py:79
+msgid "Tecnologías"
+msgstr "Technologies"
+
+#: models.py:79
+msgid "Selecciona una o más tecnologías"
+msgstr "Select one or more technologies"
+
+#: models.py:86 models.py:97
+msgid "Proyecto"
+msgstr "Project"
+
+#: models.py:87
+msgid "Proyectos"
+msgstr "Projects"
+
+#: models.py:92
+msgid "25% ancho"
+msgstr "25% width"
+
+#: models.py:93
+msgid "50% ancho"
+msgstr "50% width"
+
+#: models.py:94
+msgid "100% ancho"
+msgstr "100% width"
+
+#: models.py:98
+msgid "Imágen"
+msgstr "Image"
+
+#: models.py:99
+msgid "Ancho"
+msgstr "Width"
+
+#: models.py:106
+msgid "Imágen del Proyecto"
+msgstr "Project Image"
+
+#: models.py:107
+msgid "Imágenes del Proyecto"
+msgstr "Project Images"
+
+#: models.py:116 models.py:119 models.py:120
+msgid "Sobre mi"
+msgstr "About"
+
+#: templates/about.html:6 templates/blog.html:7 templates/home.html:17
+#: templates/post.html:7 templates/project.html:5 templates/projects.html:5
+#: templates/thoughts.html:5
+msgctxt "Page title"
+msgid "Python y Javascript"
+msgstr "Python and Javascript"
+
+#: templates/about.html:12
+msgctxt "About me title"
+msgid "Quién soy?"
+msgstr "About"
+
+#: templates/about.html:13
+msgctxt "Section subtitle"
+msgid ""
+"Te invito a leer un poco acerca de mí, quién soy y con qué tecnologías "
+"trabajo."
+msgstr "I invite you to read a little about me, who I am, and what technologies I work with."
+
+#: templates/blog.html:14
+msgctxt "Section subtitle"
+msgid "Esto es lo que tengo para decir."
+msgstr "Chekout what I have to say."
+
+#: templates/blog.html:17
+#, fuzzy
+#| msgctxt "Got to Thoughts button"
+#| msgid "Ver mis posts de opinion!"
+msgctxt "Got to Thoughts button"
+msgid "Ve a ver mis posts de opinion!"
+msgstr "Go to my Mind Notes!"
+
+#: templates/blog.html:26 templates/home.html:272 templates/post.html:21
+msgid "Posteado el"
+msgstr "Posted on"
+
+#: templates/home.html:116
+msgid "Copiado al portapapeles!"
+msgstr "Copied to clipboard!"
+
+#: templates/home.html:135
+msgctxt "Navigation"
+msgid "Acerca de mí"
+msgstr "About"
+
+#: templates/home.html:136
+msgctxt "Navigation"
+msgid "Proyectos"
+msgstr "Projects"
+
+#: templates/home.html:138
+msgctxt "Navigation"
+msgid "Opinión"
+msgstr "Mind Notes"
+
+#: templates/home.html:172
+msgctxt "Hero section"
+msgid "Hola, soy Luciano"
+msgstr "Hi there, I'm Luciano"
+
+#: templates/home.html:173
+msgctxt "Hero section"
+msgid ""
+"Un programador web Full Stack de Argentina con más de 6 años de experiencia "
+"trabajando como freelance."
+msgstr ""
+"A Full Stack Web Developer from Argentina with 6+ years working as a "
+"freelance."
+
+#: templates/home.html:174
+msgctxt "Hero section"
+msgid "Actualmente trabajando con Python 🐍 y Javascript 💛."
+msgstr "Currently working with Python 🐍 and Javascript 💛."
+
+#: templates/home.html:197
+msgctxt "Email button tooltip"
+msgid "Click para copiar"
+msgstr "Click to copy"
+
+#: templates/home.html:201
+msgctxt "Download CV button"
+msgid "Descargar CV"
+msgstr "Download CV"
+
+#: templates/home.html:212 templates/projects.html:11
+msgctxt "Section title"
+msgid "Proyectos"
+msgstr "Projects"
+
+#: templates/home.html:213 templates/projects.html:12
+msgctxt "Section subtitle"
+msgid "Echa un vistazo a mi portfolio"
+msgstr "Let's have a look at my portfolio"
+
+#: templates/home.html:216 templates/home.html:263
+msgctxt "More button"
+msgid "Ver todo"
+msgstr "See all"
+
+#: templates/home.html:245 templates/projects.html:41
+msgctxt "View button"
+msgid "Ver"
+msgstr "View"
+
+#: templates/home.html:283 templates/thoughts.html:11
+msgctxt "Section title"
+msgid "Mis opiniones"
+msgstr "Mind Notes"
+
+#: templates/home.html:297
+msgctxt "Section title"
+msgid "Desarrollado con Python, Django, HTML y CSS Vanilla"
+msgstr "Built with Python, Django, HTML and vanilla CSS"
+
+#: templates/project.html:31
+msgid "año"
+msgstr "year"
+
+#: templates/project.html:33
+msgid "ver"
+msgstr "view"
+
+#: templates/project.html:37
+msgctxt "Project content title"
+msgid "Introducción"
+msgstr "Introduction"
+
+#: templates/project.html:41
+msgctxt "Project content title"
+msgid "Objetivos"
+msgstr "Goals"
+
+#: templates/project.html:45
+msgctxt "Project content title"
+msgid "Desafíos"
+msgstr "Challenges"
+
+#: templates/project.html:49
+msgctxt "Project content title"
+msgid "Soluciones Implementadas"
+msgstr "Implemented Solutions"
+
+#: templates/project.html:53
+msgctxt "Project content title"
+msgid "Impactos del Proyecto"
+msgstr "Project Impacts"
+
+#: templates/project.html:57
+msgctxt "Project content title"
+msgid "Conclusiones"
+msgstr "Conclusions"
+
+#: templates/project.html:61
+msgctxt "Project content title"
+msgid "Imágenes del Proyecto"
+msgstr "Project Images"
+
+#: templates/thoughts.html:12
+msgctxt "Section subtitle"
+msgid ""
+"Esto es lo que tengo para decir acerca de nuestra profesión, del mundo, de "
+"la vida."
+msgstr ""
+"This is what I have to say about our profession, about the world, about life."
+
+#: templates/thoughts.html:15
+msgctxt "Section title"
+msgid "Ve a ver mis posts técnicos"
+msgstr "Go to my technical posts!"
+
+#: views.py:100
+msgid "Formato de imágen incorrecto."
+msgstr "Bad image format."
+
+#: views.py:109
+#, python-format
+msgid "El tamáño máximo de imágen permitido es de %(size)s MB."
+msgstr "Maximum image file is %(size)s MB."
+
+#: views.py:125 views.py:126
+msgid "Solicitud inválida!"
+msgstr "Invalid request!"

@@ -1,5 +1,6 @@
 {% extends "home.html" %}
 {% load static %}
+{% load i18n %}
 
 {% block title %}Proyecto {{object.name}}  |  Luciano Muñoz - Full Stack Web Developer  |  {% translate "Python y Javascript" context "Page title" %}{% endblock title %}
 
@@ -45,11 +46,11 @@
         {{object.challenges|safe}}
       </div>
       <div class="section">
-        <h2>{% translate "Solución" context "Project content title" %}</h2>
+        <h2>{% translate "Soluciones Implementadas" context "Project content title" %}</h2>
         {{object.solutions|safe}}
       </div>
       <div class="section">
-        <h2>{% translate "Impacto" context "Project content title" %}</h2>
+        <h2>{% translate "Impactos del Proyecto" context "Project content title" %}</h2>
         {{object.impact|safe}}
       </div>
       <div class="section">
