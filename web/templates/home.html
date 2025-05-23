@@ -197,6 +197,7 @@
                   <span class="tooltip">{% translate "Click para copiar" context "Email button tooltip" %}</span>
                 </a>
               </div>
+              <!-- TODO: Download CV url -->
               <a href="" class="round-button outline-button-lg button-with-icon hover-translation">
                 {% translate "Descargar CV" context "Download CV button" %}
                 <svg class="icon" width="24" height="24">
@@ -260,7 +261,7 @@
               <h3>Chekout what I have to say</h3>
             </div>
             <div class="actions">
-              <a href="" class="round-button outline-button-md hover-translation">{% translate "Ver todo" context "More button" %}</a>
+              <a href="{% url 'blog' %}" class="round-button outline-button-md hover-translation">{% translate "Ver todo" context "More button" %}</a>
             </div>
           </div>
           <div class="writings row-lg">
