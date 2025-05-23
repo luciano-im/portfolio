@@ -34,9 +34,9 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = os.getenv('DEBUG')
 
 if not INSTANCE_RUNNING_ON_LOCALHOST:
-    ALLOWED_HOSTS = [os.getenv('ALLOWED_HOSTS_PROD')]
+    ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS_PROD').split(',')
 else:
-    ALLOWED_HOSTS = [os.getenv('ALLOWED_HOSTS_DEV')]
+    ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS_DEV').split(',')
 
 # Application definition
 
