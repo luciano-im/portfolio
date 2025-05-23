@@ -173,9 +173,6 @@ msgid "Esto es lo que tengo para decir."
 msgstr "Chekout what I have to say."
 
 #: templates/blog.html:17
-#, fuzzy
-#| msgctxt "Got to Thoughts button"
-#| msgid "Ver mis posts de opinion!"
 msgctxt "Got to Thoughts button"
 msgid "Ve a ver mis posts de opinion!"
 msgstr "See my thought posts!"
