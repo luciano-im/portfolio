@@ -178,7 +178,7 @@ msgstr "Chekout what I have to say."
 #| msgid "Ver mis posts de opinion!"
 msgctxt "Got to Thoughts button"
 msgid "Ve a ver mis posts de opinion!"
-msgstr "Go to my Mind Notes!"
+msgstr "See my thought posts!"
 
 #: templates/blog.html:26 templates/home.html:272 templates/post.html:21
 msgid "Posteado el"
@@ -201,7 +201,7 @@ msgstr "Projects"
 #: templates/home.html:138
 msgctxt "Navigation"
 msgid "Opinión"
-msgstr "Mind Notes"
+msgstr "Thoughts"
 
 #: templates/home.html:172
 msgctxt "Hero section"
@@ -255,7 +255,7 @@ msgstr "View"
 #: templates/home.html:283 templates/thoughts.html:11
 msgctxt "Section title"
 msgid "Mis opiniones"
-msgstr "Mind Notes"
+msgstr "Thoughts"
 
 #: templates/home.html:297
 msgctxt "Section title"
