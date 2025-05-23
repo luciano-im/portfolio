@@ -148,9 +148,13 @@
       <div class="nav-bottom col-12 d-flex ai-end jc-end">
         <form action="{% url "set_language" %}" method="post" class="form-language">
           {% csrf_token %}
-          <input name="next" type="hidden" value="{{ redirect_to }}" />
           {% get_current_language as LANGUAGE_CODE %}
           {% get_available_languages as languages %}
+          {% if LANGUAGE_CODE == 'es' %}
+            <input name="next" type="hidden" value="{{ request.path }}" />
+          {% else %}
+            <input name="next" type="hidden" value="{{ request.path|slice:"3:" }}" />
+          {% endif %}
           {% for lang in languages %}
             <button type="submit" name="language" value="{{ lang.0 }}" class="{% if lang.0 == LANGUAGE_CODE %}selected{% endif %}">
               {{ lang.0 }}
